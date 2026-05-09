@@ -1,26 +1,23 @@
 # 💊 Buscador de Medicamentos PAMI
 
 <!-- ESTADO Y METADATOS -->
-[![Version](https://img.shields.io/badge/version-2.0-blue)]()
-[![stable](https://img.shields.io/badge/stable-✓-brightgreen)]()
-[![Maintenance](https://img.shields.io/badge/Maintenance-Actively%20Maintained-brightgreen)]()
-[![GitHub Pages](https://img.shields.io/badge/Hosting-GitHub%20Pages-blue)](https://psbella.github.io/pami/)
-[![License](https://img.shields.io/badge/License-CC%20BY--NC%204.0-lightgrey)](https://creativecommons.org/licenses/by-nc/4.0/)
-[![Repo Size](https://img.shields.io/github/repo-size/psbella/pami)](https://github.com/psbella/pami)
-[![Last Commit](https://img.shields.io/github/last-commit/psbella/pami)](https://github.com/psbella/pami/commits/main)
+[![GitHub Pages](https://img.shields.io/badge/GitHub%20Pages-Online-222222?logo=githubpages)](https://psbella.github.io/pami/)
+[![License](https://img.shields.io/badge/License-CC%20BY--NC%204.0-lightgrey?logo=creativecommons)](https://creativecommons.org/licenses/by-nc/4.0/)
+[![Repo Size](https://img.shields.io/github/repo-size/psbella/pami?label=Repo%20Size)](https://github.com/psbella/pami)
+[![Last Commit](https://img.shields.io/github/last-commit/psbella/pami?label=Last%20Commit)](https://github.com/psbella/pami/commits/main)
 [![Open Issues](https://img.shields.io/github/issues/psbella/pami?label=Open%20Issues)](https://github.com/psbella/pami/issues)
 
 <!-- CALIDAD Y BUENAS PRÁCTICAS -->
-[![Dependencies](https://img.shields.io/badge/dependencies-none-brightgreen)](https://github.com/psbella/pami)
+[![Dependencies](https://img.shields.io/badge/Dependencies-0%20(Zero)-brightgreen)](https://github.com/psbella/pami)
 [![Open Source](https://img.shields.io/badge/Open%20Source-Yes-brightgreen)](https://opensource.org/)
-[![No Ads](https://img.shields.io/badge/No%20Ads-✅-brightgreen)](https://psbella.github.io/pami/terminos.html)
-[![No Tracking](https://img.shields.io/badge/No%20Tracking-✅-brightgreen)](https://psbella.github.io/pami/privacidad.html)
+[![No Ads](https://img.shields.io/badge/No%20Ads-Yes-brightgreen)](https://psbella.github.io/pami/terminos.html)
+[![No Tracking](https://img.shields.io/badge/No%20Tracking-Yes-brightgreen)](https://psbella.github.io/pami/privacidad.html)
 [![GDPR](https://img.shields.io/badge/GDPR-Compliant-brightgreen)](https://psbella.github.io/pami/privacidad.html)
 
 <!-- DISEÑO Y ACCESIBILIDAD -->
 [![Responsive](https://img.shields.io/badge/Responsive-Yes-brightgreen)](https://developer.mozilla.org/en-US/docs/Learn/CSS/CSS_layout/Responsive_Design)
 [![Mobile First](https://img.shields.io/badge/Mobile%20First-Yes-blue)](https://developer.mozilla.org/en-US/docs/Web/Progressive_web_apps)
-[![Accessibility](https://img.shields.io/badge/Accessibility-WCAG%20AA-brightgreen)](https://www.w3.org/WAI/WCAG2AA/)
+![Accessibility Score](https://img.shields.io/badge/Accessibility%20Score-81%25-yellow)
 
 <!-- TECNOLOGÍAS FRONTEND -->
 [![HTML5](https://img.shields.io/badge/HTML5-E34F26?logo=html5&logoColor=white)](https://developer.mozilla.org/es/docs/Web/HTML)
@@ -36,12 +33,12 @@
 [![GitHub](https://img.shields.io/badge/GitHub-181717?logo=github&logoColor=white)](https://github.com/psbella/pami)
 [![GitHub Actions](https://img.shields.io/badge/GitHub%20Actions-2088FF?logo=githubactions&logoColor=white)](https://github.com/psbella/pami/actions)
 
-<!-- MÉTRICAS LIGHTHOUSE -->
-[![Performance](https://img.shields.io/badge/Performance-71%25-yellow)](#)
-[![Accessibility Score](https://img.shields.io/badge/Accessibility%20Score-80%25-brightgreen)](#)
-[![Best Practices](https://img.shields.io/badge/Best%20Practices-100%25-brightgreen)](#)
-[![SEO](https://img.shields.io/badge/SEO-90%25-brightgreen)](#)
-[![Lighthouse](https://img.shields.io/badge/Lighthouse-Passed-brightgreen?logo=lighthouse)](#)
+<!-- MÉTRICAS LIGHTHOUSE ACTUALIZADAS -->
+[![Performance](https://img.shields.io/badge/Performance-91%25-brightgreen)](https://developers.google.com/web/tools/lighthouse)
+[![Accessibility Score](https://img.shields.io/badge/Accessibility%20Score-81%25-yellow)](https://developers.google.com/web/tools/lighthouse)
+[![Best Practices](https://img.shields.io/badge/Best%20Practices-96%25-brightgreen)](https://developers.google.com/web/tools/lighthouse)
+[![SEO](https://img.shields.io/badge/SEO-100%25-brightgreen)](https://developers.google.com/web/tools/lighthouse)
+[![Lighthouse](https://img.shields.io/badge/Lighthouse-Passed-brightgreen?logo=lighthouse)](https://developers.google.com/web/tools/lighthouse)
 
 ---
 
