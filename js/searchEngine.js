@@ -33,7 +33,7 @@ export function construirIndice(medicamentos) {
         }
     }
     
-    console.log('Índice construido con', medicamentos.length, 'medicamentos');
+    if (window.location.hostname === 'localhost') console.log('...');
 }
 
 export function buscarMedicamentos(texto) {
