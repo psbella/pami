@@ -1,41 +1,99 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-    <!-- Open Graph / Redes Sociales -->
-<meta property="og:title" content="Buscador de Medicamentos PAMI">
-<meta property="og:description" content="Buscá precios de medicamentos con cobertura PAMI. Gratuito, rápido y sin publicidad.">
-<meta property="og:image" content="https://psbella.github.io/pami/img/logo_banner.svg">
-<meta property="og:image:alt" content="Logo Buscador PAMI">
-<meta property="og:url" content="https://psbella.github.io/pami/">
-<meta property="og:type" content="website">
-<meta property="og:site_name" content="Buscador de Medicamentos PAMI">
-
-<!-- Twitter Card -->
-<meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:title" content="Buscador de Medicamentos PAMI">
-<meta name="twitter:description" content="Buscá precios de medicamentos con cobertura PAMI. Gratuito y sin publicidad.">
-<meta name="twitter:image" content="https://psbella.github.io/pami/img/logo_banner.svg">
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
     <title>Precios PAMI - Buscador de Medicamentos</title>
+    <meta name="description" content="Buscador de medicamentos con precios actualizados de PAMI. Consultá coberturas y copagos de forma rápida, gratuita y sin publicidad.">
+    <meta name="keywords" content="PAMI, medicamentos, precios, cobertura, copago, farmacia, salud">
+    <meta name="author" content="Pablo Bella">
     <link rel="stylesheet" href="style.css">
     <!-- Precargar JSON para mejorar rendimiento -->
     <link rel="preload" href="medicamentos.json" as="fetch" crossorigin="anonymous">
     <!-- Favicon -->
     <link rel="icon" type="image/svg+xml" href="img/favicon.svg">
     <link rel="shortcut icon" href="img/favicon.svg">
-    <meta name="description" content="Buscador de medicamentos con precios actualizados de PAMI. Consultá coberturas y copagos de forma rápida y gratuita.">
-<meta name="keywords" content="PAMI, medicamentos, precios, cobertura, copago, farmacia, salud">
-<meta name="author" content="Pablo Bella">
+    <!-- Open Graph / Redes Sociales -->
+    <meta property="og:title" content="Buscador de Medicamentos PAMI">
+    <meta property="og:description" content="Buscá precios de medicamentos con cobertura PAMI. Gratuito, rápido y sin publicidad.">
+    <meta property="og:image" content="https://psbella.github.io/pami/img/logo_banner.svg">
+    <meta property="og:image:alt" content="Logo Buscador PAMI">
+    <meta property="og:url" content="https://psbella.github.io/pami/">
+    <meta property="og:type" content="website">
+    <meta property="og:site_name" content="Buscador de Medicamentos PAMI">
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Buscador de Medicamentos PAMI">
+    <meta name="twitter:description" content="Buscá precios de medicamentos con cobertura PAMI. Gratuito y sin publicidad.">
+    <meta name="twitter:image" content="https://psbella.github.io/pami/img/logo_banner.svg">
 </head>
 <body>
     <div class="container">
-        <!-- Header con logo SVG inline -->
+        <!-- Iconos SVG ocultos para usar con <use> -->
+        <div style="display: none;">
+            <svg xmlns="http://www.w3.org/2000/svg">
+                <symbol id="icon-search" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <circle cx="10" cy="10" r="7"/><line x1="15" y1="15" x2="21" y2="21"/>
+                </symbol>
+                <symbol id="icon-filter" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <rect x="3" y="3" width="18" height="18" rx="2" ry="2"/>
+                    <line x1="3" y1="9" x2="21" y2="9"/><line x1="3" y1="15" x2="21" y2="15"/>
+                    <line x1="9" y1="3" x2="9" y2="21"/><line x1="15" y1="3" x2="15" y2="21"/>
+                </symbol>
+                <symbol id="icon-lab" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <path d="M20 7h-4.18A3 3 0 0 0 16 5.18V4a2 2 0 0 0-2-2H6a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2v-4"/>
+                    <line x1="17" y1="3" x2="21" y2="7"/><line x1="21" y1="3" x2="17" y2="7"/>
+                    <circle cx="7" cy="11" r="1"/><circle cx="7" cy="7" r="1"/><circle cx="7" cy="15" r="1"/>
+                </symbol>
+                <symbol id="icon-price" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <line x1="12" y1="1" x2="12" y2="23"/>
+                    <path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/>
+                </symbol>
+                <symbol id="icon-clear" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <polyline points="3 6 5 6 21 6"/>
+                    <path d="M19 6v14a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2V6m3 0V4a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2"/>
+                    <line x1="10" y1="11" x2="10" y2="17"/><line x1="14" y1="11" x2="14" y2="17"/>
+                </symbol>
+                <symbol id="icon-info" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                    <circle cx="12" cy="12" r="10"/>
+                    <line x1="12" y1="8" x2="12" y2="12"/><line x1="12" y1="16" x2="12.01" y2="16"/>
+                </symbol>
+                <symbol id="icon-update" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                    <circle cx="12" cy="12" r="10"/>
+                    <polyline points="12 6 12 12 16 14"/>
+                </symbol>
+                <symbol id="icon-cc" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <path d="M4 4v16h16V4H4z M8 9h8M8 13h6M8 17h4"/>
+                </symbol>
+                <symbol id="icon-privacy" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <rect x="3" y="3" width="18" height="18" rx="2" ry="2"/>
+                    <line x1="9" y1="9" x2="15" y2="15"/><line x1="15" y1="9" x2="9" y2="15"/>
+                </symbol>
+                <symbol id="icon-terms" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <path d="M4 4v16h16V4H4z M8 9h8M8 13h6M8 17h4"/>
+                </symbol>
+                <symbol id="icon-mail" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/>
+                    <polyline points="22,6 12,13 2,6"/>
+                </symbol>
+                <symbol id="icon-github" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"/>
+                </symbol>
+                <symbol id="icon-copyright" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                    <circle cx="12" cy="12" r="10"/>
+                    <path d="M12 8v8M8 12h8"/>
+                </symbol>
+                <symbol id="icon-arrow-left" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <line x1="19" y1="12" x2="5" y2="12"/>
+                    <polyline points="12 19 5 12 12 5"/>
+                </symbol>
+            </svg>
+        </div>
+
+        <!-- Header con logo externo -->
         <div class="header">
             <div class="header-contenido">
-                <svg class="header-logo" viewBox="0 0 71 71" width="71" height="71" xmlns="http://www.w3.org/2000/svg">
-                    <path fill="#1a73e8" d="M49.263 26.448c0.233 0.803 0.357 1.708 0.357 2.733 0 1.808 -0.397 3.554 -1.107 5.152 1.043 -0.743 1.977 -1.504 2.88 -2.203 3.199 -2.481 6.221 -3.344 8.558 -3.488 1.254 -0.078 3.308 -1.043 3.308 -2.194zm-0.457 2.733c0 -6.366 -5.824 -8.092 -11.003 -8.917 -5.218 -0.834 -11.256 -2.698 -11.256 -8.271 0 -2.733 1.708 -5.447 4.639 -5.447 4.315 0 5.07 3.273 5.088 3.741s-1.256 0.799 -1.42 1.726c-0.197 1.114 0.288 2.23 0.99 3.128 0.626 0.803 1.529 2.427 2.427 2.283 0.963 -0.153 1.311 -1.797 1.582 -2.878s0.737 -1.997 0.288 -3.002c-0.557 -1.247 -1.114 -0.63 -1.546 -1.529 -0.246 -0.515 -1.203 -5.735 -6.976 -5.735 -4.027 0 -7.695 3.326 -8.054 7.102 -0.515 5.405 1.617 7.444 6.113 9.565 7.002 3.306 14.275 3.164 14.275 7.803 0 4.531 -1.546 6.94 -4.207 8.702 -0.459 0.304 -1.333 0.703 -2.188 0.998v3.184q0.264 -0.038 0.532 -0.082c5.968 -1.007 10.714 -6.328 10.714 -12.37m-6.889 -2.733H7.739c0 1.152 2.055 2.117 3.308 2.194 2.336 0.144 5.358 1.007 8.558 3.488 3.268 2.534 6.949 5.871 14.653 6.195v9.798q0.672 0.124 1.493 0.126c0.229 0 0.584 -0.016 0.99 -0.058v-10.344c4.134 -0.905 6.394 -4.433 6.394 -9.101 0 -0.961 -0.395 -1.682 -1.218 -2.301m-7.657 29.161c0.694 0.424 1.549 0.61 2.481 0.734v-3.827c-0.83 0.055 -1.664 0.044 -2.481 -0.038zm8.216 3.095c-1.331 -1.007 -3.057 -1.24 -6.13 -1.617 -3.641 -0.448 -4.599 -2.738 -4.708 -5.152a8.875 8.875 0 0 1 -2.574 -1.318 12.203 12.203 0 0 0 -0.253 2.552c0 3.632 3.914 5.174 6.687 5.574 2.878 0.413 5.574 0.521 5.951 0.683a2.219 2.219 0 0 1 0.774 0.521c0.162 0.18 0.592 0.433 0.863 0.251 0.271 -0.18 0.053 -0.99 -0.612 -1.493m-9.816 -11.149q0.353 -0.359 0.785 -0.63v-2.221a9.319 9.319 0 0 0 -1.804 1.309c0 0.597 0.357 1.14 1.018 1.544m7.91 -1.041c0 1.726 -2.265 2.554 -4.819 2.554s-4.926 -1.007 -4.926 -3.057c0 -2.529 1.041 -3.43 2.618 -3.836v-3.552c-3.463 0.268 -6.323 3.452 -6.323 6.166 0 1.977 0.351 5.079 5.826 6.652 5.753 1.655 12.37 -1.977 12.37 -5.609 0 -1.762 -0.903 -2.616 -2.086 -2.984 -0.983 -0.306 -2.148 -0.746 -5.676 0.273v2.241c0.557 -0.153 1.052 -0.248 1.54 -0.248 1.007 0 1.475 0.324 1.475 1.402m-18.806 20.208H49.234c0 -0.45 -1.456 -1.096 -2.716 -1.205s-2.949 -0.177 -3.326 -0.504c-0.521 -0.448 -1.353 -0.761 -2.445 -1.025 -1.114 -0.271 -4.009 -0.504 -4.009 -2.086v-2.197a31.063 31.063 0 0 1 -1.356 -0.162 13.313 13.313 0 0 1 -1.125 -0.213v2.572c0 1.582 -2.895 1.815 -4.009 2.086 -1.092 0.264 -1.924 0.575 -2.445 1.025 -0.377 0.326 -2.068 0.395 -3.326 0.504s-2.716 0.754 -2.716 1.205"/>
-                </svg>
+                <img src="img/logo_banner.svg" alt="Buscador de Medicamentos PAMI" class="header-logo">
                 <div class="header-texto">
                     <h1>Buscador de Medicamentos PAMI</h1>
                     <p>Precios de medicamentos con descuento de PAMI</p>
@@ -47,17 +105,11 @@
         <div class="busqueda-section">
             <div class="busqueda-container">
                 <div class="input-icon">
-                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#5f6368" stroke-width="2">
-                        <circle cx="10" cy="10" r="7"/>
-                        <line x1="15" y1="15" x2="21" y2="21"/>
-                    </svg>
+                    <svg width="20" height="20"><use href="#icon-search"/></svg>
                     <input type="text" id="buscador" placeholder="ingresá al menos tres caracteres">
                 </div>
                 <button id="btnBuscar">
-                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2">
-                        <circle cx="10" cy="10" r="7"/>
-                        <line x1="15" y1="15" x2="21" y2="21"/>
-                    </svg>
+                    <svg width="18" height="18"><use href="#icon-search"/></svg>
                     Buscar
                 </button>
             </div>
@@ -71,13 +123,7 @@
             <div class="filtros-container">
                 <div class="filtro-grupo">
                     <label>
-                        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#5f6368" stroke-width="2">
-                            <rect x="3" y="3" width="18" height="18" rx="2" ry="2"/>
-                            <line x1="3" y1="9" x2="21" y2="9"/>
-                            <line x1="3" y1="15" x2="21" y2="15"/>
-                            <line x1="9" y1="3" x2="9" y2="21"/>
-                            <line x1="15" y1="3" x2="15" y2="21"/>
-                        </svg>
+                        <svg width="14" height="14"><use href="#icon-filter"/></svg>
                         Presentación
                     </label>
                     <select id="filtroPresentacion">
@@ -87,14 +133,7 @@
                 
                 <div class="filtro-grupo">
                     <label>
-                        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#5f6368" stroke-width="2">
-                            <path d="M20 7h-4.18A3 3 0 0 0 16 5.18V4a2 2 0 0 0-2-2H6a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2v-4"/>
-                            <line x1="17" y1="3" x2="21" y2="7"/>
-                            <line x1="21" y1="3" x2="17" y2="7"/>
-                            <circle cx="7" cy="11" r="1"/>
-                            <circle cx="7" cy="7" r="1"/>
-                            <circle cx="7" cy="15" r="1"/>
-                        </svg>
+                        <svg width="14" height="14"><use href="#icon-lab"/></svg>
                         Laboratorio
                     </label>
                     <select id="filtroLaboratorio">
@@ -104,10 +143,7 @@
                 
                 <div class="filtro-grupo">
                     <label>
-                        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#5f6368" stroke-width="2">
-                            <line x1="12" y1="1" x2="12" y2="23"/>
-                            <path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/>
-                        </svg>
+                        <svg width="14" height="14"><use href="#icon-price"/></svg>
                         Ordenar por precio
                     </label>
                     <select id="ordenPrecio">
@@ -120,12 +156,7 @@
             
             <div class="limpiar-container">
                 <button id="btnLimpiarFiltros" class="btn-limpiar">
-                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                        <polyline points="3 6 5 6 21 6"/>
-                        <path d="M19 6v14a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2V6m3 0V4a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2"/>
-                        <line x1="10" y1="11" x2="10" y2="17"/>
-                        <line x1="14" y1="11" x2="14" y2="17"/>
-                    </svg>
+                    <svg width="16" height="16"><use href="#icon-clear"/></svg>
                     Limpiar filtros
                 </button>
             </div>
@@ -135,10 +166,7 @@
         
         <div id="resultados" class="resultados">
             <div class="mensaje-inicial">
-                <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="#5f6368" stroke-width="1.5">
-                    <circle cx="10" cy="10" r="7"/>
-                    <line x1="15" y1="15" x2="21" y2="21"/>
-                </svg>
+                <svg width="32" height="32"><use href="#icon-search"/></svg>
                 <p>Buscá un medicamento para ver los resultados</p>
             </div>
         </div>
@@ -147,72 +175,49 @@
         <footer class="footer">
             <div class="footer-contenido">
                 <div class="footer-aviso">
-                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#5f6368" stroke-width="1.5">
-                        <circle cx="12" cy="12" r="10"/>
-                        <line x1="12" y1="8" x2="12" y2="12"/>
-                        <line x1="12" y1="16" x2="12.01" y2="16"/>
-                    </svg>
+                    <svg width="16" height="16"><use href="#icon-info"/></svg>
                     <span>Fuente oficial: <strong>datos.pami.org.ar</strong>. Los precios son orientativos y pueden cambiar sin previo aviso.</span>
                 </div>
                 
                 <div class="footer-actualizacion">
-                    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#5f6368" stroke-width="1.5">
-                        <circle cx="12" cy="12" r="10"/>
-                        <polyline points="12 6 12 12 16 14"/>
-                    </svg>
+                    <svg width="14" height="14"><use href="#icon-update"/></svg>
                     <span>Última actualización del dataset: <strong id="fecha-actualizacion">Cargando...</strong></span>
                 </div>
                 
                 <div class="footer-links">
                     <a href="https://creativecommons.org/licenses/by-nc/4.0/" target="_blank" rel="noopener noreferrer">
-                        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                            <path d="M4 4v16h16V4H4z M8 9h8M8 13h6M8 17h4"/>
-                        </svg>
+                        <svg width="14" height="14"><use href="#icon-cc"/></svg>
                         CC BY-NC 4.0
                     </a>
                     <a href="privacidad.html">
-                        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                            <rect x="3" y="3" width="18" height="18" rx="2" ry="2"/>
-                            <line x1="9" y1="9" x2="15" y2="15"/>
-                            <line x1="15" y1="9" x2="9" y2="15"/>
-                        </svg>
+                        <svg width="14" height="14"><use href="#icon-privacy"/></svg>
                         Política de Privacidad
                     </a>
                     <a href="terminos.html">
-                        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                            <path d="M4 4v16h16V4H4z M8 9h8M8 13h6M8 17h4"/>
-                        </svg>
+                        <svg width="14" height="14"><use href="#icon-terms"/></svg>
                         Términos y Condiciones
                     </a>
                     <a href="mailto:pablo.s.bella@gmail.com?subject=Web%20Precios%20PAMI">
-                        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                            <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/>
-                            <polyline points="22,6 12,13 2,6"/>
-                        </svg>
+                        <svg width="14" height="14"><use href="#icon-mail"/></svg>
                         Contacto
                     </a>
                 </div>
                 
                 <div class="footer-mis-proyectos">
                     <a href="https://github.com/psbella?tab=repositories" target="_blank" rel="noopener noreferrer">
-                        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                            <path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"/>
-                        </svg>
+                        <svg width="18" height="18"><use href="#icon-github"/></svg>
                         Mis otros proyectos en GitHub
                     </a>
                 </div>
                 
                 <div class="footer-copyright">
-                    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#9aa0a6" stroke-width="1.5">
-                        <circle cx="12" cy="12" r="10"/>
-                        <path d="M12 8v8M8 12h8"/>
-                    </svg>
+                    <svg width="14" height="14"><use href="#icon-copyright"/></svg>
                     <span>© 2025 - Buscador de Medicamentos PAMI</span>
                 </div>
             </div>
         </footer>
     </div>
     
-    <script src="script.js" defer></script>
+    <script type="module" src="js/main.js" defer></script>
 </body>
 </html>
