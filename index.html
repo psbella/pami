@@ -8,8 +8,10 @@
     <meta name="keywords" content="PAMI, medicamentos, precios, cobertura, copago, farmacia, salud">
     <meta name="author" content="Pablo Bella">
     <link rel="stylesheet" href="style.css">
-    <!-- Precargar JSON para mejorar rendimiento -->
+    <!-- Precargar JSON y recursos críticos -->
     <link rel="preload" href="medicamentos.json" as="fetch" crossorigin="anonymous">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="dns-prefetch" href="https://github.com">
     <!-- Favicon -->
     <link rel="icon" type="image/svg+xml" href="img/favicon.svg">
     <link rel="shortcut icon" href="img/favicon.svg">
@@ -90,10 +92,16 @@
             </svg>
         </div>
 
-        <!-- Header con logo externo -->
+        <!-- Header con logo externo (con dimensiones explícitas) -->
         <div class="header">
             <div class="header-contenido">
-                <img src="img/logo_banner.svg" alt="Buscador de Medicamentos PAMI" class="header-logo">
+                <img src="img/logo_banner.svg" 
+                     alt="Buscador de Medicamentos PAMI" 
+                     class="header-logo"
+                     width="71"
+                     height="71"
+                     loading="eager"
+                     decoding="async">
                 <div class="header-texto">
                     <h1>Buscador de Medicamentos PAMI</h1>
                     <p>Precios de medicamentos con descuento de PAMI</p>
@@ -164,10 +172,25 @@
         
         <div id="contador" class="contador"></div>
         
+        <!-- Skeleton loader (mejora percepción de carga) -->
         <div id="resultados" class="resultados">
-            <div class="mensaje-inicial">
-                <svg width="32" height="32"><use href="#icon-search"/></svg>
-                <p>Buscá un medicamento para ver los resultados</p>
+            <div class="skeleton-card">
+                <div class="skeleton-title"></div>
+                <div class="skeleton-line"></div>
+                <div class="skeleton-line"></div>
+                <div class="skeleton-line short"></div>
+            </div>
+            <div class="skeleton-card">
+                <div class="skeleton-title"></div>
+                <div class="skeleton-line"></div>
+                <div class="skeleton-line"></div>
+                <div class="skeleton-line short"></div>
+            </div>
+            <div class="skeleton-card">
+                <div class="skeleton-title"></div>
+                <div class="skeleton-line"></div>
+                <div class="skeleton-line"></div>
+                <div class="skeleton-line short"></div>
             </div>
         </div>
         
@@ -218,6 +241,7 @@
         </footer>
     </div>
     
-    <script type="module" src="js/main.js" defer></script>
+    <!-- Scripts minificados -->
+    <script type="module" src="js/main.min.js" defer></script>
 </body>
 </html>
