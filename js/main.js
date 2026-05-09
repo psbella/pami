@@ -8,7 +8,8 @@ import {
     actualizarContadorTotal, 
     cargarOpcionesFiltros, 
     mostrarResultados, 
-    actualizarFechaEnFooter 
+    actualizarFechaEnFooter,
+    mostrarMensajeInicial
 } from './uiRenderer.js';
 import { mapearMedicamento } from './mapeador.js';
 
@@ -29,6 +30,11 @@ function actualizarTodo() {
     
     if (textoBusqueda && textoBusqueda.length >= 3) {
         resultados = buscarMedicamentos(textoBusqueda);
+    } else if (textoBusqueda === '') {
+        // Si el buscador está vacío, no mostrar resultados
+        mostrarMensajeInicial();
+        document.getElementById('contador').innerHTML = '';
+        return;
     } else {
         resultados = [...getMedicamentosGlobales()];
     }
@@ -60,7 +66,9 @@ function setupEventListeners() {
             const texto = e.target.value.trim();
             
             if (texto === '') {
-                timeoutBuscador = setTimeout(() => actualizarTodo(), 100);
+                // Si se borra el texto, mostrar mensaje inicial
+                mostrarMensajeInicial();
+                document.getElementById('contador').innerHTML = '';
                 return;
             }
             
@@ -77,6 +85,11 @@ function setupEventListeners() {
     
     if (btnBuscar) {
         btnBuscar.addEventListener('click', () => {
+            const texto = document.getElementById('buscador').value.trim();
+            if (texto.length < 3) {
+                document.getElementById('resultados').innerHTML = '<div class="mensaje-inicial"><svg width="32" height="32"><use href="#icon-search"/></svg><p>Ingresá al menos 3 caracteres</p></div>';
+                return;
+            }
             clearTimeout(timeoutBuscador);
             mostrarSkeleton();
             actualizarTodo();
@@ -112,8 +125,15 @@ function limpiarFiltros() {
     document.getElementById('filtroPresentacion').value = '';
     document.getElementById('filtroLaboratorio').value = '';
     document.getElementById('ordenPrecio').value = '';
-    mostrarSkeleton();
-    actualizarTodo();
+    
+    const textoBusqueda = document.getElementById('buscador').value.trim();
+    if (textoBusqueda === '') {
+        mostrarMensajeInicial();
+        document.getElementById('contador').innerHTML = '';
+    } else {
+        mostrarSkeleton();
+        actualizarTodo();
+    }
 }
 
 async function init() {
@@ -131,7 +151,9 @@ async function init() {
         cargarOpcionesFiltros(opciones.presentaciones, opciones.laboratorios);
         
         resultadosUltimaBusqueda = [...medicamentosMapeados];
-        mostrarResultados(medicamentosMapeados);
+        
+        // No mostrar resultados al cargar, solo el mensaje inicial
+        mostrarMensajeInicial();
         
         setupEventListeners();
         
