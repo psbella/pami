@@ -4,6 +4,7 @@ import { cargarDatos, getMedicamentos, getFechaActualizacion } from './dataLoade
 import { construirIndice, buscarMedicamentos, getMedicamentosGlobales } from './searchEngine.js';
 import { aplicarFiltros, extraerOpcionesFiltros } from './filters.js';
 import { 
+    mostrarSkeleton,
     actualizarContadorTotal, 
     cargarOpcionesFiltros, 
     mostrarResultados, 
@@ -60,12 +61,13 @@ function setupEventListeners() {
             }
             
             if (texto.length < 3) {
-                document.getElementById('resultados').innerHTML = '<div class="mensaje-inicial"><svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="#5f6368" stroke-width="1.5"><circle cx="10" cy="10" r="7"/><line x1="15" y1="15" x2="21" y2="21"/></svg><p>Ingresá al menos 3 caracteres</p></div>';
+                document.getElementById('resultados').innerHTML = '<div class="mensaje-inicial"><svg width="32" height="32"><use href="#icon-search"/></svg><p>Ingresá al menos 3 caracteres</p></div>';
                 document.getElementById('contador').innerHTML = '';
                 return;
             }
             
-            document.getElementById('resultados').innerHTML = '<div class="mensaje-inicial"><svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="#5f6368" stroke-width="1.5"><circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="12"/><line x1="12" y1="16" x2="12.01" y2="16"/></svg><p>Buscando...</p></div>';
+            // Mostrar skeleton mientras busca
+            mostrarSkeleton();
             timeoutBuscador = setTimeout(() => actualizarTodo(), 200);
         });
     }
@@ -73,6 +75,7 @@ function setupEventListeners() {
     if (btnBuscar) {
         btnBuscar.addEventListener('click', () => {
             clearTimeout(timeoutBuscador);
+            mostrarSkeleton();
             actualizarTodo();
         });
     }
@@ -106,10 +109,14 @@ function limpiarFiltros() {
     document.getElementById('filtroPresentacion').value = '';
     document.getElementById('filtroLaboratorio').value = '';
     document.getElementById('ordenPrecio').value = '';
+    mostrarSkeleton();
     actualizarTodo();
 }
 
 async function init() {
+    // Mostrar skeleton inmediatamente al cargar la página
+    mostrarSkeleton();
+    
     try {
         const { medicamentos, fecha } = await cargarDatos();
         const medicamentosMapeados = mapearLista(medicamentos);
@@ -126,12 +133,10 @@ async function init() {
         
         setupEventListeners();
         
-        document.getElementById('resultados').innerHTML = '<div class="mensaje-inicial"><svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="#5f6368" stroke-width="1.5"><circle cx="10" cy="10" r="7"/><line x1="15" y1="15" x2="21" y2="21"/></svg><p>Buscá un medicamento para ver los resultados</p></div>';
-        document.getElementById('contador').innerHTML = '';
-        
     } catch (error) {
         console.error(error);
-        document.getElementById('resultados').innerHTML = '<p>Error al cargar los datos: ' + error.message + '</p>';
+        document.getElementById('resultados').innerHTML = '<div class="mensaje-inicial"><svg width="32" height="32"><use href="#icon-search"/></svg><p>Error al cargar los datos: ' + error.message + '</p></div>';
+        document.getElementById('contador').innerHTML = '';
     }
 }
 
