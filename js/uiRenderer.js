@@ -6,7 +6,6 @@ export function mostrarSkeleton() {
     const contenedor = document.getElementById('resultados');
     if (!contenedor) return;
     
-    // Si ya tiene resultados reales, no mostrar skeleton
     if (contenedor.children.length > 0 && !contenedor.querySelector('.skeleton-card')) {
         return;
     }
@@ -23,6 +22,18 @@ export function mostrarSkeleton() {
         `);
     }
     contenedor.innerHTML = skeletons.join('');
+}
+
+export function mostrarMensajeInicial() {
+    const contenedor = document.getElementById('resultados');
+    if (!contenedor) return;
+    
+    contenedor.innerHTML = `
+        <div class="mensaje-inicial">
+            <svg width="32" height="32"><use href="#icon-search"/></svg>
+            <p>Buscá un medicamento para ver los resultados</p>
+        </div>
+    `;
 }
 
 export function actualizarContadorTotal(cantidad) {
