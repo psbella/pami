@@ -51,24 +51,26 @@ export function cargarOpcionesFiltros(presentaciones, laboratorios, selectedPres
     
     if (selectPresentacion) {
         selectPresentacion.innerHTML = '<option value="">Todas</option>';
-        presentaciones.forEach(p => {
+        for (let i = 0; i < presentaciones.length; i++) {
+            const p = presentaciones[i];
             const option = document.createElement('option');
             option.value = p;
             option.textContent = p.length > 50 ? p.substring(0, 50) + '...' : p;
             selectPresentacion.appendChild(option);
-        });
+        }
         if (presentaciones.includes(selectedPres)) selectPresentacion.value = selectedPres;
         else selectPresentacion.value = '';
     }
     
     if (selectLaboratorio) {
         selectLaboratorio.innerHTML = '<option value="">Todos</option>';
-        laboratorios.forEach(l => {
+        for (let i = 0; i < laboratorios.length; i++) {
+            const l = laboratorios[i];
             const option = document.createElement('option');
             option.value = l;
             option.textContent = l;
             selectLaboratorio.appendChild(option);
-        });
+        }
         if (laboratorios.includes(selectedLab)) selectLaboratorio.value = selectedLab;
         else selectLaboratorio.value = '';
     }
@@ -91,30 +93,35 @@ export function mostrarResultados(lista) {
         contadorDiv.innerHTML += ' (mostrando 200 de ' + lista.length + ')';
     }
     
-    contenedor.innerHTML = listaMostrar.map(med => `
-        <div class="tarjeta">
-            <h3 class="marca-tarjeta">${med.MARCA || 'N/A'}</h3>
-            <div class="tabla-interna">
-                <div class="fila-tabla">
-                    <div class="celda etiqueta">Droga</div>
-                    <div class="celda valor">${med.DROGA || 'N/A'}</div>
+    let html = '';
+    for (let i = 0; i < listaMostrar.length; i++) {
+        const med = listaMostrar[i];
+        html += `
+            <div class="tarjeta">
+                <h3 class="marca-tarjeta">${med.MARCA || 'N/A'}</h3>
+                <div class="tabla-interna">
+                    <div class="fila-tabla">
+                        <div class="celda etiqueta">Droga</div>
+                        <div class="celda valor">${med.DROGA || 'N/A'}</div>
+                    </div>
+                    <div class="fila-tabla">
+                        <div class="celda etiqueta">Presentación</div>
+                        <div class="celda valor">${med.PRESENTACION || 'N/A'}</div>
+                    </div>
+                    <div class="fila-tabla">
+                        <div class="celda etiqueta">Cobertura</div>
+                        <div class="celda valor"><span class="cobertura-tag">${formatearCobertura(med.COBERTURA)}</span></div>
+                    </div>
+                    <div class="fila-tabla">
+                        <div class="celda etiqueta">Precio final</div>
+                        <div class="celda valor precio-destacado">${formatearPrecio(med.COPAGO)}</div>
+                    </div>
                 </div>
-                <div class="fila-tabla">
-                    <div class="celda etiqueta">Presentación</div>
-                    <div class="celda valor">${med.PRESENTACION || 'N/A'}</div>
-                </div>
-                <div class="fila-tabla">
-                    <div class="celda etiqueta">Cobertura</div>
-                    <div class="celda valor"><span class="cobertura-tag">${formatearCobertura(med.COBERTURA)}</span></div>
-                </div>
-                <div class="fila-tabla">
-                    <div class="celda etiqueta">Precio final</div>
-                    <div class="celda valor precio-destacado">${formatearPrecio(med.COPAGO)}</div>
-                </div>
+                <div class="laboratorio-tarjeta">${med.LABORATORIO || 'N/A'}</div>
             </div>
-            <div class="laboratorio-tarjeta">${med.LABORATORIO || 'N/A'}</div>
-        </div>
-    `).join('');
+        `;
+    }
+    contenedor.innerHTML = html;
 }
 
 export function actualizarFechaEnFooter(fecha) {
