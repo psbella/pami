@@ -2,6 +2,29 @@
 
 import { formatearPrecio, formatearCobertura } from './utils.js';
 
+export function mostrarSkeleton() {
+    const contenedor = document.getElementById('resultados');
+    if (!contenedor) return;
+    
+    // Si ya tiene resultados reales, no mostrar skeleton
+    if (contenedor.children.length > 0 && !contenedor.querySelector('.skeleton-card')) {
+        return;
+    }
+    
+    const skeletons = [];
+    for (let i = 0; i < 5; i++) {
+        skeletons.push(`
+            <div class="skeleton-card">
+                <div class="skeleton-title"></div>
+                <div class="skeleton-line"></div>
+                <div class="skeleton-line"></div>
+                <div class="skeleton-line short"></div>
+            </div>
+        `);
+    }
+    contenedor.innerHTML = skeletons.join('');
+}
+
 export function actualizarContadorTotal(cantidad) {
     const span = document.getElementById('totalMedicamentos');
     if (!span) return;
@@ -56,7 +79,7 @@ export function mostrarResultados(lista) {
     const contadorDiv = document.getElementById('contador');
     
     if (!lista || lista.length === 0) {
-        contenedor.innerHTML = '<div class="mensaje-inicial"><svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="#5f6368" stroke-width="1.5"><circle cx="10" cy="10" r="7"/><line x1="15" y1="15" x2="21" y2="21"/></svg><p>No se encontraron medicamentos.</p></div>';
+        contenedor.innerHTML = '<div class="mensaje-inicial"><svg width="32" height="32"><use href="#icon-search"/></svg><p>No se encontraron medicamentos.</p></div>';
         contadorDiv.innerHTML = '0 resultados';
         return;
     }
