@@ -24,14 +24,15 @@ export function extraerOpcionesFiltros(medicamentos) {
     const presentaciones = new Set();
     const laboratorios = new Set();
     
-    medicamentos.forEach(med => {
+    for (let i = 0; i < medicamentos.length; i++) {
+        const med = medicamentos[i];
         if (med.PRESENTACION && med.PRESENTACION !== 'N/A') {
             presentaciones.add(med.PRESENTACION);
         }
         if (med.LABORATORIO && med.LABORATORIO !== 'N/A') {
             laboratorios.add(med.LABORATORIO);
         }
-    });
+    }
     
     return {
         presentaciones: Array.from(presentaciones).sort(),
