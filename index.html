@@ -8,30 +8,19 @@
     <meta name="keywords" content="PAMI, medicamentos, precios, cobertura, copago, farmacia, salud">
     <meta name="author" content="Pablo Bella">
     <link rel="stylesheet" href="style.css">
-    <!-- Precargar JSON y recursos críticos -->
     <link rel="preload" href="medicamentos.json" as="fetch" crossorigin="anonymous">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="dns-prefetch" href="https://github.com">
-    <!-- Favicon -->
     <link rel="icon" type="image/svg+xml" href="img/favicon.svg">
     <link rel="shortcut icon" href="img/favicon.svg">
-    <!-- Open Graph / Redes Sociales -->
     <meta property="og:title" content="Buscador de Medicamentos PAMI">
     <meta property="og:description" content="Buscá precios de medicamentos con cobertura PAMI. Gratuito, rápido y sin publicidad.">
     <meta property="og:image" content="https://psbella.github.io/pami/img/logo_banner.svg">
-    <meta property="og:image:alt" content="Logo Buscador PAMI">
     <meta property="og:url" content="https://psbella.github.io/pami/">
     <meta property="og:type" content="website">
-    <meta property="og:site_name" content="Buscador de Medicamentos PAMI">
-    <!-- Twitter Card -->
     <meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:title" content="Buscador de Medicamentos PAMI">
-    <meta name="twitter:description" content="Buscá precios de medicamentos con cobertura PAMI. Gratuito y sin publicidad.">
-    <meta name="twitter:image" content="https://psbella.github.io/pami/img/logo_banner.svg">
 </head>
 <body>
     <div class="container">
-        <!-- Iconos SVG ocultos para usar con <use> -->
+        <!-- Iconos SVG ocultos -->
         <div style="display: none;">
             <svg xmlns="http://www.w3.org/2000/svg">
                 <symbol id="icon-search" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
@@ -85,23 +74,13 @@
                     <circle cx="12" cy="12" r="10"/>
                     <path d="M12 8v8M8 12h8"/>
                 </symbol>
-                <symbol id="icon-arrow-left" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                    <line x1="19" y1="12" x2="5" y2="12"/>
-                    <polyline points="12 19 5 12 12 5"/>
-                </symbol>
             </svg>
         </div>
 
-        <!-- Header con logo externo (con dimensiones explícitas) -->
+        <!-- Header -->
         <div class="header">
             <div class="header-contenido">
-                <img src="img/logo_banner.svg" 
-                     alt="Buscador de Medicamentos PAMI" 
-                     class="header-logo"
-                     width="71"
-                     height="71"
-                     loading="eager"
-                     decoding="async">
+                <img src="img/logo_banner.svg" alt="Buscador de Medicamentos PAMI" class="header-logo" width="71" height="71" loading="eager" decoding="async">
                 <div class="header-texto">
                     <h1>Buscador de Medicamentos PAMI</h1>
                     <p>Precios de medicamentos con descuento de PAMI</p>
@@ -109,7 +88,7 @@
             </div>
         </div>
         
-        <!-- SECCIÓN BÚSQUEDA -->
+        <!-- Búsqueda -->
         <div class="busqueda-section">
             <div class="busqueda-container">
                 <div class="input-icon">
@@ -126,34 +105,19 @@
             </div>
         </div>
         
-        <!-- SECCIÓN FILTROS -->
+        <!-- Filtros -->
         <div class="filtros-section">
             <div class="filtros-container">
                 <div class="filtro-grupo">
-                    <label>
-                        <svg width="14" height="14"><use href="#icon-filter"/></svg>
-                        Presentación
-                    </label>
-                    <select id="filtroPresentacion">
-                        <option value="">Todas</option>
-                    </select>
+                    <label><svg width="14" height="14"><use href="#icon-filter"/></svg>Presentación</label>
+                    <select id="filtroPresentacion"><option value="">Todas</option></select>
                 </div>
-                
                 <div class="filtro-grupo">
-                    <label>
-                        <svg width="14" height="14"><use href="#icon-lab"/></svg>
-                        Laboratorio
-                    </label>
-                    <select id="filtroLaboratorio">
-                        <option value="">Todos</option>
-                    </select>
+                    <label><svg width="14" height="14"><use href="#icon-lab"/></svg>Laboratorio</label>
+                    <select id="filtroLaboratorio"><option value="">Todos</option></select>
                 </div>
-                
                 <div class="filtro-grupo">
-                    <label>
-                        <svg width="14" height="14"><use href="#icon-price"/></svg>
-                        Ordenar por precio
-                    </label>
+                    <label><svg width="14" height="14"><use href="#icon-price"/></svg>Ordenar por precio</label>
                     <select id="ordenPrecio">
                         <option value="">Sin orden</option>
                         <option value="asc">$ ↑ Más barato primero</option>
@@ -161,7 +125,6 @@
                     </select>
                 </div>
             </div>
-            
             <div class="limpiar-container">
                 <button id="btnLimpiarFiltros" class="btn-limpiar">
                     <svg width="16" height="16"><use href="#icon-clear"/></svg>
@@ -172,67 +135,29 @@
         
         <div id="contador" class="contador"></div>
         
-        <!-- Skeleton loader (mejora percepción de carga) -->
-        <div id="resultados" class="resultados">
-            <div class="skeleton-card">
-                <div class="skeleton-title"></div>
-                <div class="skeleton-line"></div>
-                <div class="skeleton-line"></div>
-                <div class="skeleton-line short"></div>
-            </div>
-            <div class="skeleton-card">
-                <div class="skeleton-title"></div>
-                <div class="skeleton-line"></div>
-                <div class="skeleton-line"></div>
-                <div class="skeleton-line short"></div>
-            </div>
-            <div class="skeleton-card">
-                <div class="skeleton-title"></div>
-                <div class="skeleton-line"></div>
-                <div class="skeleton-line"></div>
-                <div class="skeleton-line short"></div>
-            </div>
-        </div>
+        <!-- Contenedor de resultados (vacío, los skeletons se agregan con JS) -->
+        <div id="resultados" class="resultados"></div>
         
-        <!-- FOOTER -->
+        <!-- Footer -->
         <footer class="footer">
             <div class="footer-contenido">
                 <div class="footer-aviso">
                     <svg width="16" height="16"><use href="#icon-info"/></svg>
                     <span>Fuente oficial: <strong>datos.pami.org.ar</strong>. Los precios son orientativos y pueden cambiar sin previo aviso.</span>
                 </div>
-                
                 <div class="footer-actualizacion">
                     <svg width="14" height="14"><use href="#icon-update"/></svg>
                     <span>Última actualización del dataset: <strong id="fecha-actualizacion">Cargando...</strong></span>
                 </div>
-                
                 <div class="footer-links">
-                    <a href="https://creativecommons.org/licenses/by-nc/4.0/" target="_blank" rel="noopener noreferrer">
-                        <svg width="14" height="14"><use href="#icon-cc"/></svg>
-                        CC BY-NC 4.0
-                    </a>
-                    <a href="privacidad.html">
-                        <svg width="14" height="14"><use href="#icon-privacy"/></svg>
-                        Política de Privacidad
-                    </a>
-                    <a href="terminos.html">
-                        <svg width="14" height="14"><use href="#icon-terms"/></svg>
-                        Términos y Condiciones
-                    </a>
-                    <a href="mailto:pablo.s.bella@gmail.com?subject=Web%20Precios%20PAMI">
-                        <svg width="14" height="14"><use href="#icon-mail"/></svg>
-                        Contacto
-                    </a>
+                    <a href="https://creativecommons.org/licenses/by-nc/4.0/" target="_blank"><svg width="14" height="14"><use href="#icon-cc"/></svg>CC BY-NC 4.0</a>
+                    <a href="privacidad.html"><svg width="14" height="14"><use href="#icon-privacy"/></svg>Política de Privacidad</a>
+                    <a href="terminos.html"><svg width="14" height="14"><use href="#icon-terms"/></svg>Términos y Condiciones</a>
+                    <a href="mailto:pablo.s.bella@gmail.com?subject=Web%20Precios%20PAMI"><svg width="14" height="14"><use href="#icon-mail"/></svg>Contacto</a>
                 </div>
-                
                 <div class="footer-mis-proyectos">
-                    <a href="https://github.com/psbella?tab=repositories" target="_blank" rel="noopener noreferrer">
-                        <svg width="18" height="18"><use href="#icon-github"/></svg>
-                        Mis otros proyectos en GitHub
-                    </a>
+                    <a href="https://github.com/psbella?tab=repositories" target="_blank"><svg width="18" height="18"><use href="#icon-github"/></svg>Mis otros proyectos en GitHub</a>
                 </div>
-                
                 <div class="footer-copyright">
                     <svg width="14" height="14"><use href="#icon-copyright"/></svg>
                     <span>© 2025 - Buscador de Medicamentos PAMI</span>
@@ -241,7 +166,6 @@
         </footer>
     </div>
     
-    <!-- Scripts minificados -->
-    <script type="module" src="js/main.min.js" defer></script>
+    <script type="module" src="js/main.js" defer></script>
 </body>
 </html>
