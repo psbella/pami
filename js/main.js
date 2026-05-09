@@ -1,6 +1,6 @@
 // Punto de entrada principal
 
-import { cargarDatos, getMedicamentos, getFechaActualizacion } from './dataLoader.js';
+import { cargarDatos } from './dataLoader.js';
 import { construirIndice, buscarMedicamentos, getMedicamentosGlobales } from './searchEngine.js';
 import { aplicarFiltros, extraerOpcionesFiltros } from './filters.js';
 import { 
@@ -16,7 +16,11 @@ let timeoutBuscador;
 let resultadosUltimaBusqueda = [];
 
 function mapearLista(medicamentosRaw) {
-    return medicamentosRaw.map((item, idx) => mapearMedicamento(item, idx));
+    const resultado = [];
+    for (let i = 0; i < medicamentosRaw.length; i++) {
+        resultado.push(mapearMedicamento(medicamentosRaw[i], i));
+    }
+    return resultado;
 }
 
 function actualizarTodo() {
@@ -66,7 +70,6 @@ function setupEventListeners() {
                 return;
             }
             
-            // Mostrar skeleton mientras busca
             mostrarSkeleton();
             timeoutBuscador = setTimeout(() => actualizarTodo(), 200);
         });
@@ -114,7 +117,6 @@ function limpiarFiltros() {
 }
 
 async function init() {
-    // Mostrar skeleton inmediatamente al cargar la página
     mostrarSkeleton();
     
     try {
