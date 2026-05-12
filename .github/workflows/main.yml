@@ -1,0 +1,30 @@
+name: Auto Update Vademecum
+on:
+  schedule:
+    - cron: '0 0 * * 1' # Todos los lunes a las 00:00 UTC
+  workflow_dispatch: # Botón para ejecutarlo a mano
+
+jobs:
+  update:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+      
+      - name: Setup Node.js
+        uses: actions/setup-node@v3
+        with:
+          node-version: '18'
+          
+      - name: Install dependencies
+        run: npm install axios cheerio xlsx
+        
+      - name: Run Update Script
+        run: node scripts/update-vademecum.js
+        
+      - name: Commit and Push
+        run: |
+          git config --global user.name 'PAMI Data Bot'
+          git config --global user.email 'bot@pami-data.com'
+          git add medicamentos.json
+          git commit -m "Auto-update: Vademécum corregido ($(date +%F))" || exit 0
+          git push
