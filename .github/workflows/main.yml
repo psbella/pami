@@ -2,8 +2,8 @@ name: PAMI Auto-Update
 
 on:
   schedule:
-    - cron: '0 0 * * 1' # Se ejecuta automáticamente todos los lunes a las 00:00 UTC
-  workflow_dispatch: # Te permite ejecutarlo manualmente desde la pestaña "Actions"
+    - cron: '0 18 * * 3'   # Miércoles a las 18:00 UTC (15:00 GMT-3)
+  workflow_dispatch:        # Ejecución manual
 
 jobs:
   build:
@@ -29,7 +29,5 @@ jobs:
           git config --global user.name 'PAMI Data Bot'
           git config --global user.email 'bot@pami-data.ar'
           git add medicamentos.json
-          # Solo hace commit si hay cambios reales para evitar errores
           git commit -m "Auto-update: Vademécum PAMI ($(date +'%d/%m/%Y'))" || exit 0
           git push
-          
