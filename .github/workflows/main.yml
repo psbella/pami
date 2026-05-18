@@ -2,8 +2,8 @@ name: PAMI Auto-Update
 
 on:
   schedule:
-    - cron: '0 18 * * 3'   # Miércoles a las 18:00 UTC (15:00 GMT-3)
-  workflow_dispatch:        # Ejecución manual
+    - cron: '0 18 * * 3'
+  workflow_dispatch:
 
 jobs:
   build:
@@ -24,10 +24,20 @@ jobs:
       - name: Ejecutar script de actualización
         run: node scripts/update-vademecum.js
 
+      - name: Verificar cambios en medicamentos.json
+        run: |
+          if [ -f "medicamentos.json" ]; then
+            echo "✅ medicamentos.json existe"
+            cat medicamentos.json | head -c 200
+          else
+            echo "❌ medicamentos.json NO se generó"
+            exit 1
+          fi
+
       - name: Commit y Push de cambios
         run: |
           git config --global user.name 'PAMI Data Bot'
           git config --global user.email 'bot@pami-data.ar'
           git add medicamentos.json
-          git commit -m "Auto-update: Vademécum PAMI ($(date +'%d/%m/%Y'))" || exit 0
+          git diff --staged --quiet || git commit -m "Auto-update: Vademécum PAMI ($(date +'%d/%m/%Y'))"
           git push
