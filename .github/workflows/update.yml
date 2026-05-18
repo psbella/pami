@@ -2,7 +2,7 @@ name: PAMI Auto-Update
 
 on:
   schedule:
-    - cron: '0 18 * * 3'
+    - cron: '0 18 * * 3'   # Miércoles 15:00 GMT-3
   workflow_dispatch:
 
 jobs:
