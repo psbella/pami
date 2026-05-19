@@ -1,14 +1,16 @@
-name: Actualizar y Desplegar PAMI
+name: Convertir XLSX a JSON
 
 on:
   push:
     paths:
-      - '*.xlsx'
-      - 'xls_to_JSON.py'
-  workflow_dispatch:
+      - '*.xlsx'           # Se activa cuando subís un XLSX
+  workflow_dispatch:        # También manual
+
+permissions:
+  contents: write
 
 jobs:
-  convert-and-deploy:
+  convert:
     runs-on: ubuntu-latest
     
     steps:
@@ -26,7 +28,7 @@ jobs:
       - name: Convertir XLSX a JSON
         run: python xls_to_JSON.py
       
-      - name: Commit y push de cambios
+      - name: Commit y push
         run: |
           git config user.name "PAMI Data Bot"
           git config user.email "bot@pami-data.ar"
