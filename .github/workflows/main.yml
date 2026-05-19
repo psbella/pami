@@ -1,31 +1,35 @@
-name: PAMI Auto-Update
+name: Actualizar y Desplegar PAMI
 
 on:
-  schedule:
-    - cron: '0 18 * * 3'
+  push:
+    paths:
+      - '*.xlsx'
+      - 'xls_to_JSON.py'
   workflow_dispatch:
 
 jobs:
-  update:
+  convert-and-deploy:
     runs-on: ubuntu-latest
+    
     steps:
-      - uses: actions/checkout@v4
+      - name: Clonar repositorio
+        uses: actions/checkout@v4
       
-      - name: Setup Python
+      - name: Configurar Python
         uses: actions/setup-python@v5
         with:
           python-version: '3.12'
       
       - name: Instalar dependencias
-        run: pip install openpyxl requests
+        run: pip install openpyxl
       
-      - name: Descargar y convertir
+      - name: Convertir XLSX a JSON
         run: python xls_to_JSON.py
       
-      - name: Commit y push
+      - name: Commit y push de cambios
         run: |
           git config user.name "PAMI Data Bot"
           git config user.email "bot@pami-data.ar"
           git add medicamentos.json
-          git diff --staged --quiet || git commit -m "Auto-update: Vademécum PAMI ($(date +'%d/%m/%Y'))"
+          git diff --staged --quiet || git commit -m "Actualizar medicamentos.json ($(date +'%d/%m/%Y'))"
           git push
