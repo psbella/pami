@@ -14,7 +14,7 @@ if sys.platform == 'win32':
 REEMPLAZOS = {
     # Vocales con acento (Windows-1252 a UTF-8)
     'Ã¡': 'á', 'Ã©': 'é', 'Ã­': 'í', 'Ã³': 'ó', 'Ãº': 'ú',
-    'Ã€': 'À', 'Ãˆ': 'È', 'ÃŒ': 'Ì', 'Ã’: 'Ò', 'Ã': 'Ù',
+    'Ã€': 'À', 'Ãˆ': 'È', 'ÃŒ': 'Ì', 'Ã’': 'Ò', 'Ã™': 'Ù',
     'Ã¢': 'â', 'Ãª': 'ê', 'Ã®': 'î', 'Ã´': 'ô', 'Ã»': 'û',
     # Ñ y Ü
     'Ã±': 'ñ', 'Ã‘': 'Ñ', 'Ã¼': 'ü', 'Ãœ': 'Ü',
@@ -49,7 +49,6 @@ def normalizar_nombre(texto):
     """Convierte a formato título: primeras letras mayúsculas"""
     if not texto:
         return ''
-    # Excepciones que no se capitalizan
     excepciones = {'y', 'de', 'la', 'del', 'los', 'las', 'con', 'sin', 'por', 'para', 'a', 'ante', 'bajo', 'cabe', 'contra', 'desde', 'durante', 'en', 'entre', 'hacia', 'hasta', 'mediante', 'segun', 'so', 'sobre', 'tras', 'el', 'un', 'una', 'y/o', 'e', 'u'}
     
     palabras = texto.split()
@@ -67,20 +66,12 @@ def limpiar_texto(texto):
         return ''
     texto = str(texto)
     
-    # Reemplazar caracteres mal codificados
     for mal, bien in REEMPLAZOS.items():
         texto = texto.replace(mal, bien)
     
-    # Normalizar Unicode
     texto = unicodedata.normalize('NFC', texto)
-    
-    # Eliminar caracteres no imprimibles
     texto = re.sub(r'[^\x20-\x7E\xA0-\xFF\u0100-\uFFFF]', '', texto)
-    
-    # Eliminar espacios múltiples
     texto = re.sub(r'\s+', ' ', texto).strip()
-    
-    # Normalizar formato del nombre
     texto = normalizar_nombre(texto)
     
     return texto
@@ -142,7 +133,7 @@ with open('medicamentos.json', 'w', encoding='utf-8') as f:
 print(f"✅ {len(medicamentos)} medicamentos guardados")
 print(f"📅 Fecha: {fecha_actual}")
 
-# Mostrar laboratorios para verificar
+# Mostrar muestra de laboratorios
 labs = {}
 for med in medicamentos:
     lab = med['LABORATORIO']
