@@ -100,40 +100,54 @@ function setupEventListeners() {
         btnLimpiar.addEventListener('click', limpiarFiltros);
     }
     
-    if (filtroPresentacion) filtroPresentacion.addEventListener('change', () => filtrarResultados());
-    if (filtroLaboratorio) filtroLaboratorio.addEventListener('change', () => filtrarResultados());
-    if (ordenPrecio) ordenPrecio.addEventListener('change', () => ordenarResultados());
-}
-
-function filtrarResultados() {
-    const presentacion = document.getElementById('filtroPresentacion').value;
-    const laboratorio = document.getElementById('filtroLaboratorio').value;
-    const orden = document.getElementById('ordenPrecio').value;
-    const resultadosFiltrados = aplicarFiltros(resultadosUltimaBusqueda, presentacion, laboratorio, orden);
-    mostrarResultados(resultadosFiltrados);
-}
-
-function ordenarResultados() {
-    const presentacion = document.getElementById('filtroPresentacion').value;
-    const laboratorio = document.getElementById('filtroLaboratorio').value;
-    const orden = document.getElementById('ordenPrecio').value;
-    const resultadosFiltrados = aplicarFiltros(resultadosUltimaBusqueda, presentacion, laboratorio, orden);
-    mostrarResultados(resultadosFiltrados);
+    if (filtroPresentacion) {
+        filtroPresentacion.addEventListener('change', () => {
+            const textoBusqueda = document.getElementById('buscador').value.trim();
+            if (textoBusqueda.length >= 3 || resultadosUltimaBusqueda.length > 0) {
+                actualizarTodo();
+            }
+        });
+    }
+    
+    if (filtroLaboratorio) {
+        filtroLaboratorio.addEventListener('change', () => {
+            const textoBusqueda = document.getElementById('buscador').value.trim();
+            if (textoBusqueda.length >= 3 || resultadosUltimaBusqueda.length > 0) {
+                actualizarTodo();
+            }
+        });
+    }
+    
+    if (ordenPrecio) {
+        ordenPrecio.addEventListener('change', () => {
+            const textoBusqueda = document.getElementById('buscador').value.trim();
+            if (textoBusqueda.length >= 3 || resultadosUltimaBusqueda.length > 0) {
+                actualizarTodo();
+            }
+        });
+    }
 }
 
 function limpiarFiltros() {
-    document.getElementById('filtroPresentacion').value = '';
-    document.getElementById('filtroLaboratorio').value = '';
-    document.getElementById('ordenPrecio').value = '';
+    // Resetear selects
+    const filtroPresentacion = document.getElementById('filtroPresentacion');
+    const filtroLaboratorio = document.getElementById('filtroLaboratorio');
+    const ordenPrecio = document.getElementById('ordenPrecio');
     
-    const textoBusqueda = document.getElementById('buscador').value.trim();
-    if (textoBusqueda === '') {
-        mostrarMensajeInicial();
-        document.getElementById('contador').innerHTML = '';
-    } else {
-        mostrarSkeleton();
-        actualizarTodo();
-    }
+    if (filtroPresentacion) filtroPresentacion.value = '';
+    if (filtroLaboratorio) filtroLaboratorio.value = '';
+    if (ordenPrecio) ordenPrecio.value = '';
+    
+    // Resetear buscador
+    const buscador = document.getElementById('buscador');
+    if (buscador) buscador.value = '';
+    
+    // Mostrar mensaje inicial
+    mostrarMensajeInicial();
+    document.getElementById('contador').innerHTML = '';
+    
+    // Resetear resultados guardados
+    resultadosUltimaBusqueda = [...getMedicamentosGlobales()];
 }
 
 async function init() {
