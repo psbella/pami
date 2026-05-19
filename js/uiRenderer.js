@@ -109,7 +109,10 @@ export function mostrarResultados(lista) {
         const med = listaMostrar[i];
         html += `
             <div class="tarjeta">
-                <h3 class="marca-tarjeta">${med.MARCA || 'N/A'}</h3>
+                <div class="tarjeta-header">
+                    <h3 class="marca-tarjeta">${med.MARCA || 'N/A'}</h3>
+                    <span class="laboratorio-badge">${med.LABORATORIO || 'N/A'}</span>
+                </div>
                 <div class="tabla-interna">
                     <div class="fila-tabla">
                         <div class="celda etiqueta">Droga</div>
@@ -128,7 +131,6 @@ export function mostrarResultados(lista) {
                         <div class="celda valor precio-destacado">${formatearPrecio(med.COPAGO)}</div>
                     </div>
                 </div>
-                <div class="laboratorio-tarjeta">${med.LABORATORIO || 'N/A'}</div>
             </div>
         `;
     }
