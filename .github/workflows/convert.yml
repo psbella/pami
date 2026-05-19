@@ -1,0 +1,44 @@
+name: Convertir XLSX a JSON
+
+on:
+  push:
+    paths:
+      - '*.xlsx'
+  workflow_dispatch:
+
+jobs:
+  convert:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      
+      - name: Setup Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      
+      - name: Instalar dependencias
+        run: pip install openpyxl
+      
+      - name: Inspeccionar columnas del XLSX
+        run: |
+          python -c "
+          from openpyxl import load_workbook
+          import os
+          xlsx = [f for f in os.listdir('.') if f.endswith('.xlsx')][0]
+          wb = load_workbook(xlsx, data_only=True)
+          ws = wb.active
+          print('Columnas en la fila 1:', [cell.value for cell in ws[1]])
+          print('Primer registro (fila 2):', [cell.value for cell in ws[2]])
+          "
+      
+      - name: Ejecutar conversión
+        run: python xls_to_JSON.py
+      
+      - name: Commit y push
+        run: |
+          git config user.name "PAMI Data Bot"
+          git config user.email "bot@pami-data.ar"
+          git add medicamentos.json
+          git diff --staged --quiet || git commit -m "Auto-update: Vademécum PAMI ($(date +'%d/%m/%Y'))"
+          git push
