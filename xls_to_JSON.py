@@ -1,8 +1,13 @@
 import json
 import re
 import os
+import sys
 from datetime import datetime
 from openpyxl import load_workbook
+
+# Forzar UTF-8 en la salida de la consola (Windows)
+if sys.platform == 'win32':
+    sys.stdout.reconfigure(encoding='utf-8')
 
 # Buscar el archivo XLSX
 archivo_xls = None
@@ -25,6 +30,7 @@ for row in ws.iter_rows(min_row=2, values_only=True):
     if not row[0]:
         continue
     
+    # Limpiar y normalizar texto (conservando acentos)
     droga = str(row[0]).strip() if row[0] else ''
     marca = str(row[1]).strip() if row[1] else ''
     presentacion = str(row[2]).strip() if row[2] else ''
@@ -50,8 +56,10 @@ for row in ws.iter_rows(min_row=2, values_only=True):
 fecha = datetime.now().strftime("%d/%m/%Y %H:%M")
 datos = {"fecha": fecha, "medicamentos": medicamentos}
 
+# Guardar JSON con UTF-8 explícito
 with open('medicamentos.json', 'w', encoding='utf-8') as f:
     json.dump(datos, f, ensure_ascii=False, indent=2)
 
 print(f"✅ {len(medicamentos)} medicamentos guardados")
 print(f"📅 Fecha: {fecha}")
+print("🔤 Codificación: UTF-8")
