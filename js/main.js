@@ -31,7 +31,6 @@ function actualizarTodo() {
     if (textoBusqueda && textoBusqueda.length >= 3) {
         resultados = buscarMedicamentos(textoBusqueda);
     } else if (textoBusqueda === '') {
-        // Si el buscador está vacío, no mostrar resultados
         mostrarMensajeInicial();
         document.getElementById('contador').innerHTML = '';
         return;
@@ -66,7 +65,6 @@ function setupEventListeners() {
             const texto = e.target.value.trim();
             
             if (texto === '') {
-                // Si se borra el texto, mostrar mensaje inicial
                 mostrarMensajeInicial();
                 document.getElementById('contador').innerHTML = '';
                 return;
@@ -142,12 +140,17 @@ function limpiarFiltros() {
     const buscador = document.getElementById('buscador');
     if (buscador) buscador.value = '';
     
+    // Recargar las opciones de filtros con TODOS los medicamentos
+    const todosLosMedicamentos = getMedicamentosGlobales();
+    const opciones = extraerOpcionesFiltros(todosLosMedicamentos);
+    cargarOpcionesFiltros(opciones.presentaciones, opciones.laboratorios);
+    
+    // Resetear resultados guardados
+    resultadosUltimaBusqueda = [...todosLosMedicamentos];
+    
     // Mostrar mensaje inicial
     mostrarMensajeInicial();
     document.getElementById('contador').innerHTML = '';
-    
-    // Resetear resultados guardados
-    resultadosUltimaBusqueda = [...getMedicamentosGlobales()];
 }
 
 async function init() {
@@ -166,7 +169,6 @@ async function init() {
         
         resultadosUltimaBusqueda = [...medicamentosMapeados];
         
-        // No mostrar resultados al cargar, solo el mensaje inicial
         mostrarMensajeInicial();
         
         setupEventListeners();
