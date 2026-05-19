@@ -10,27 +10,91 @@ from openpyxl import load_workbook
 if sys.platform == 'win32':
     sys.stdout.reconfigure(encoding='utf-8')
 
+# Tabla de reemplazos para caracteres mal codificados
+REEMPLAZOS = {
+    # Vocales con acento (Windows-1252 a UTF-8)
+    'Ã¡': 'á', 'Ã©': 'é', 'Ã­': 'í', 'Ã³': 'ó', 'Ãº': 'ú',
+    'Ã€': 'À', 'Ãˆ': 'È', 'ÃŒ': 'Ì', 'Ã’: 'Ò', 'Ã™': 'Ù',
+    'Ã¢': 'â', 'Ãª': 'ê', 'Ã®': 'î', 'Ã´': 'ô', 'Ã»': 'û',
+    # Ñ y Ü
+    'Ã±': 'ñ', 'Ã‘': 'Ñ', 'Ã¼': 'ü', 'Ãœ': 'Ü',
+    # Símbolos comunes
+    'Â¡': '¡', 'Â¿': '¿', 'Â°': '°', 'Â·': '·', 'Â®': '®',
+    'Â©': '©', 'Â§': '§', 'Â¶': '¶',
+    # Comillas y apóstrofes
+    'â€œ': '"', 'â€': '"', 'â€˜': "'", 'â€™': "'",
+    'â€š': ',', 'â€ž': '"', 'â€¦': '...',
+    # Guiones
+    'â€”': '-', 'â€“': '-',
+    
+    # Problemas específicos de laboratorios
+    'Bag¿': 'Bagó',
+    'bag¿': 'Bagó',
+    'Cassarß': 'Cassará',
+    'cassarß': 'Cassará',
+    'Temis-Lostal¿': 'Temis-Lostaló',
+    'G¿minis Farmac¿': 'Géminis Farmacéutica',
+    'Andr¿maco': 'Andrómaco',
+    
+    # Reemplazos generales para caracteres sueltos
+    '¿': 'ó',
+    'ß': 'á',
+    
+    # Casos con espacios
+    '¿ ': 'ó ',
+    'ß ': 'á ',
+}
+
+def normalizar_nombre(texto):
+    """Convierte a formato título: primeras letras mayúsculas"""
+    if not texto:
+        return ''
+    # Excepciones que no se capitalizan
+    excepciones = {'y', 'de', 'la', 'del', 'los', 'las', 'con', 'sin', 'por', 'para', 'a', 'ante', 'bajo', 'cabe', 'contra', 'desde', 'durante', 'en', 'entre', 'hacia', 'hasta', 'mediante', 'segun', 'so', 'sobre', 'tras', 'el', 'un', 'una', 'y/o', 'e', 'u'}
+    
+    palabras = texto.split()
+    resultado = []
+    for i, p in enumerate(palabras):
+        if i == 0 or p.lower() not in excepciones:
+            resultado.append(p[0].upper() + p[1:].lower() if len(p) > 1 else p.upper())
+        else:
+            resultado.append(p.lower())
+    return ' '.join(resultado)
+
 def limpiar_texto(texto):
     """Limpia y normaliza texto, corrige acentos mal codificados"""
     if not texto:
         return ''
     texto = str(texto)
-    # Reemplazar caracteres mal codificados comunes
-    reemplazos = {
-        'Ã¡': 'á', 'Ã©': 'é', 'Ã­': 'í', 'Ã³': 'ó', 'Ãº': 'ú',
-        'Ã±': 'ñ', 'Ã¼': 'ü', 'Ã‘': 'Ñ', 'Ã': 'í',
-        'Â¡': '¡', 'Â¿': '¿', 'Â°': '°',
-        'BagÃ³': 'Bagó', 'CassarÃŸ': 'Cassará',
-        'Temis-LostalÃ¿': 'Temis-Lostaló',
-        'GÃ¿minis FarmacÃ¿': 'Géminis Farmacéutica',
-        'AndrÃ¿maco': 'Andrómaco',
-        'Microsules Arg.': 'Microsules Argentina',
-    }
-    for mal, bien in reemplazos.items():
+    
+    # Reemplazar caracteres mal codificados
+    for mal, bien in REEMPLAZOS.items():
         texto = texto.replace(mal, bien)
-    # Normalizar Unicode (convertir caracteres a su forma base)
+    
+    # Normalizar Unicode
     texto = unicodedata.normalize('NFC', texto)
-    return texto.strip()
+    
+    # Eliminar caracteres no imprimibles
+    texto = re.sub(r'[^\x20-\x7E\xA0-\xFF\u0100-\uFFFF]', '', texto)
+    
+    # Eliminar espacios múltiples
+    texto = re.sub(r'\s+', ' ', texto).strip()
+    
+    # Normalizar formato del nombre
+    texto = normalizar_nombre(texto)
+    
+    return texto
+
+def limpiar_precio(valor):
+    """Limpia el precio y lo convierte a float"""
+    if not valor:
+        return 0
+    precio_raw = str(valor)
+    precio_limpio = re.sub(r'[^\d.,-]', '', precio_raw).replace(',', '.')
+    try:
+        return float(precio_limpio)
+    except:
+        return 0
 
 # Buscar el archivo XLSX
 archivo_xls = None
@@ -58,13 +122,7 @@ for row in ws.iter_rows(min_row=2, values_only=True):
     presentacion = limpiar_texto(row[2])
     laboratorio = limpiar_texto(row[3])
     cobertura = str(row[4]).replace('%', '').strip() if row[4] else '0'
-    
-    precio_raw = str(row[5]) if row[5] else '0'
-    precio_limpio = re.sub(r'[^\d.,-]', '', precio_raw).replace(',', '.')
-    try:
-        copago = float(precio_limpio)
-    except:
-        copago = 0
+    copago = limpiar_precio(row[5])
     
     medicamentos.append({
         "DROGA": droga,
@@ -75,20 +133,21 @@ for row in ws.iter_rows(min_row=2, values_only=True):
         "COPAGO": copago
     })
 
-fecha = datetime.now().strftime("%d/%m/%Y %H:%M")
-datos = {"fecha": fecha, "medicamentos": medicamentos}
+fecha_actual = datetime.now().strftime("%d/%m/%Y %H:%M")
+datos = {"fecha": fecha_actual, "medicamentos": medicamentos}
 
-# Guardar JSON con UTF-8
 with open('medicamentos.json', 'w', encoding='utf-8') as f:
     json.dump(datos, f, ensure_ascii=False, indent=2)
 
 print(f"✅ {len(medicamentos)} medicamentos guardados")
-print(f"📅 Fecha: {fecha}")
+print(f"📅 Fecha: {fecha_actual}")
 
-# Mostrar algunos laboratorios para verificar
-laboratorios_unicos = {}
-for med in medicamentos[:50]:
+# Mostrar laboratorios para verificar
+labs = {}
+for med in medicamentos:
     lab = med['LABORATORIO']
-    if lab and lab not in laboratorios_unicos:
-        laboratorios_unicos[lab] = True
-print(f"🔤 Muestra de laboratorios: {list(laboratorios_unicos.keys())[:5]}")
+    if lab and lab not in labs:
+        labs[lab] = True
+print("\n🔤 Muestra de laboratorios:")
+for i, lab in enumerate(sorted(labs.keys())[:20]):
+    print(f"   {i+1}. {lab}")
