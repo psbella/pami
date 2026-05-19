@@ -1,5 +1,5 @@
 {
-  "fecha": "19/05/2026 08:20",
+  "fecha": "19/05/2026 08:24",
   "medicamentos": [
     {
       "DROGA": "aceite de pescado",
@@ -45,7 +45,7 @@
       "DROGA": "acenocumarol",
       "MARCA": "FORTONOL",
       "PRESENTACION": "4 mg comp.x 20",
-      "LABORATORIO": "Microsules Arg.",
+      "LABORATORIO": "Microsules Argentina",
       "COBERTURA": "80",
       "COPAGO": 2786.85
     },
@@ -677,7 +677,7 @@
       "DROGA": "alendronato",
       "MARCA": "TILIOS",
       "PRESENTACION": "70 mg comp.x 4",
-      "LABORATORIO": "Microsules Arg.",
+      "LABORATORIO": "Microsules Argentina",
       "COBERTURA": "60",
       "COPAGO": 5469.49
     },
@@ -749,7 +749,7 @@
       "DROGA": "alendronato",
       "MARCA": "TILIOS",
       "PRESENTACION": "70 mg comp.x 8",
-      "LABORATORIO": "Microsules Arg.",
+      "LABORATORIO": "Microsules Argentina",
       "COBERTURA": "60",
       "COPAGO": 7717.47
     },
@@ -1277,7 +1277,7 @@
       "DROGA": "alprazolam",
       "MARCA": "ALPRAZOLAM MICROSULES",
       "PRESENTACION": "0.50 mg comp.x 30",
-      "LABORATORIO": "Microsules Arg.",
+      "LABORATORIO": "Microsules Argentina",
       "COBERTURA": "50",
       "COPAGO": 2460.71
     },
@@ -1317,7 +1317,7 @@
       "DROGA": "alprazolam",
       "MARCA": "ALPRAZOLAM MICROSULES",
       "PRESENTACION": "0.50 mg comp.x 60",
-      "LABORATORIO": "Microsules Arg.",
+      "LABORATORIO": "Microsules Argentina",
       "COBERTURA": "50",
       "COPAGO": 4629.95
     },
@@ -1445,7 +1445,7 @@
       "DROGA": "alprazolam",
       "MARCA": "ALPRAZOLAM MICROSULES",
       "PRESENTACION": "1 mg comp.x 30",
-      "LABORATORIO": "Microsules Arg.",
+      "LABORATORIO": "Microsules Argentina",
       "COBERTURA": "50",
       "COPAGO": 3805.25
     },
@@ -1565,7 +1565,7 @@
       "DROGA": "alprazolam",
       "MARCA": "ALPRAZOLAM MICROSULES",
       "PRESENTACION": "1 mg comp.x 60",
-      "LABORATORIO": "Microsules Arg.",
+      "LABORATORIO": "Microsules Argentina",
       "COBERTURA": "50",
       "COPAGO": 7094.63
     },
@@ -1693,7 +1693,7 @@
       "DROGA": "alprazolam",
       "MARCA": "ALPRAZOLAM MICROSULES",
       "PRESENTACION": "2 mg comp.x 30",
-      "LABORATORIO": "Microsules Arg.",
+      "LABORATORIO": "Microsules Argentina",
       "COBERTURA": "50",
       "COPAGO": 5929.73
     },
@@ -2397,7 +2397,7 @@
       "DROGA": "amlodipina",
       "MARCA": "ANEXA",
       "PRESENTACION": "10 mg comp.x 30",
-      "LABORATORIO": "Microsules Arg.",
+      "LABORATORIO": "Microsules Argentina",
       "COBERTURA": "60",
       "COPAGO": 10018.39
     },
@@ -2685,7 +2685,7 @@
       "DROGA": "amlodipina",
       "MARCA": "ANEXA",
       "PRESENTACION": "5 mg comp.x 30",
-      "LABORATORIO": "Microsules Arg.",
+      "LABORATORIO": "Microsules Argentina",
       "COBERTURA": "60",
       "COPAGO": 6183.75
     },
@@ -3197,7 +3197,7 @@
       "DROGA": "amoxicilina",
       "MARCA": "NOBACTAM",
       "PRESENTACION": "1 g comp.rec.x 16",
-      "LABORATORIO": "Microsules Arg.",
+      "LABORATORIO": "Microsules Argentina",
       "COBERTURA": "60",
       "COPAGO": 8914.62
     },
@@ -3205,7 +3205,7 @@
       "DROGA": "amoxicilina",
       "MARCA": "NOBACTAM",
       "PRESENTACION": "1 g comp.rec.x 8",
-      "LABORATORIO": "Microsules Arg.",
+      "LABORATORIO": "Microsules Argentina",
       "COBERTURA": "60",
       "COPAGO": 4294.51
     },
@@ -3349,7 +3349,7 @@
       "DROGA": "amoxicilina",
       "MARCA": "NOBACTAM",
       "PRESENTACION": "250 mg susp.ped.x 90 ml",
-      "LABORATORIO": "Microsules Arg.",
+      "LABORATORIO": "Microsules Argentina",
       "COBERTURA": "60",
       "COPAGO": 2529.5
     },
@@ -3645,7 +3645,7 @@
       "DROGA": "amoxicilina",
       "MARCA": "NOBACTAM",
       "PRESENTACION": "500 mg susp.ped.x 90 ml",
-      "LABORATORIO": "Microsules Arg.",
+      "LABORATORIO": "Microsules Argentina",
       "COBERTURA": "60",
       "COPAGO": 4749.72
     },
@@ -3965,7 +3965,7 @@
       "DROGA": "amoxicilina+ambroxol",
       "MARCA": "NOBACTAM BRONQUIAL",
       "PRESENTACION": "comp.rec.x 16",
-      "LABORATORIO": "Microsules Arg.",
+      "LABORATORIO": "Microsules Argentina",
       "COBERTURA": "50",
       "COPAGO": 5004.78
     },
@@ -4285,7 +4285,7 @@
       "DROGA": "amoxicilina+clavulánico,ác.",
       "MARCA": "NOBACTAM CLAVULANICO 2",
       "PRESENTACION": "comp.rec.x 14",
-      "LABORATORIO": "Microsules Arg.",
+      "LABORATORIO": "Microsules Argentina",
       "COBERTURA": "60",
       "COPAGO": 8991.31
     },
@@ -5301,7 +5301,7 @@
       "DROGA": "atenolol",
       "MARCA": "ATENOLOL MICROSULES",
       "PRESENTACION": "50 mg comp.x 28",
-      "LABORATORIO": "Microsules Arg.",
+      "LABORATORIO": "Microsules Argentina",
       "COBERTURA": "80",
       "COPAGO": 1418.73
     },
@@ -5341,7 +5341,7 @@
       "DROGA": "atenolol",
       "MARCA": "ATENOLOL MICROSULES",
       "PRESENTACION": "50 mg comp.x 30",
-      "LABORATORIO": "Microsules Arg.",
+      "LABORATORIO": "Microsules Argentina",
       "COBERTURA": "80",
       "COPAGO": 1418.73
     },
@@ -5381,7 +5381,7 @@
       "DROGA": "atenolol",
       "MARCA": "ATENOLOL MICROSULES",
       "PRESENTACION": "50 mg comp.x 56",
-      "LABORATORIO": "Microsules Arg.",
+      "LABORATORIO": "Microsules Argentina",
       "COBERTURA": "80",
       "COPAGO": 2949.93
     },
@@ -5405,7 +5405,7 @@
       "DROGA": "atenolol",
       "MARCA": "ATENOLOL MICROSULES",
       "PRESENTACION": "50 mg comp.x 60",
-      "LABORATORIO": "Microsules Arg.",
+      "LABORATORIO": "Microsules Argentina",
       "COBERTURA": "80",
       "COPAGO": 2949.93
     },
@@ -5701,7 +5701,7 @@
       "DROGA": "atorvastatín",
       "MARCA": "FINLIPOL",
       "PRESENTACION": "10 mg comp.x 30",
-      "LABORATORIO": "Microsules Arg.",
+      "LABORATORIO": "Microsules Argentina",
       "COBERTURA": "60",
       "COPAGO": 13650.86
     },
@@ -5789,7 +5789,7 @@
       "DROGA": "atorvastatín",
       "MARCA": "FINLIPOL",
       "PRESENTACION": "10 mg comp.x 60",
-      "LABORATORIO": "Microsules Arg.",
+      "LABORATORIO": "Microsules Argentina",
       "COBERTURA": "60",
       "COPAGO": 22941.09
     },
@@ -5997,7 +5997,7 @@
       "DROGA": "atorvastatín",
       "MARCA": "FINLIPOL",
       "PRESENTACION": "20 mg comp.x 30",
-      "LABORATORIO": "Microsules Arg.",
+      "LABORATORIO": "Microsules Argentina",
       "COBERTURA": "60",
       "COPAGO": 22700.75
     },
@@ -6077,7 +6077,7 @@
       "DROGA": "atorvastatín",
       "MARCA": "FINLIPOL",
       "PRESENTACION": "20 mg comp.x 60",
-      "LABORATORIO": "Microsules Arg.",
+      "LABORATORIO": "Microsules Argentina",
       "COBERTURA": "60",
       "COPAGO": 38175.57
     },
@@ -6181,7 +6181,7 @@
       "DROGA": "atorvastatín",
       "MARCA": "FINLIPOL",
       "PRESENTACION": "40 mg comp.x 30",
-      "LABORATORIO": "Microsules Arg.",
+      "LABORATORIO": "Microsules Argentina",
       "COBERTURA": "60",
       "COPAGO": 24751.36
     },
@@ -6853,7 +6853,7 @@
       "DROGA": "azitromicina",
       "MARCA": "TANEZOX",
       "PRESENTACION": "500 mg comp.x 3",
-      "LABORATORIO": "Microsules Arg.",
+      "LABORATORIO": "Microsules Argentina",
       "COBERTURA": "60",
       "COPAGO": 4477.79
     },
@@ -6909,7 +6909,7 @@
       "DROGA": "azitromicina",
       "MARCA": "TANEZOX",
       "PRESENTACION": "500 mg comp.x 6",
-      "LABORATORIO": "Microsules Arg.",
+      "LABORATORIO": "Microsules Argentina",
       "COBERTURA": "60",
       "COPAGO": 5795.1
     },
@@ -7949,7 +7949,7 @@
       "DROGA": "betametasona+gentamic.+miconazol",
       "MARCA": "TRIPLEX",
       "PRESENTACION": "cr.x 20 g",
-      "LABORATORIO": "Microsules Arg.",
+      "LABORATORIO": "Microsules Argentina",
       "COBERTURA": "40",
       "COPAGO": 7345.52
     },
@@ -10789,7 +10789,7 @@
       "DROGA": "carvedilol",
       "MARCA": "ENTARSOL 12.5",
       "PRESENTACION": "12.5 mg comp.x 28",
-      "LABORATORIO": "Microsules Arg.",
+      "LABORATORIO": "Microsules Argentina",
       "COBERTURA": "60",
       "COPAGO": 5227.36
     },
@@ -11141,7 +11141,7 @@
       "DROGA": "carvedilol",
       "MARCA": "ENTARSOL 25",
       "PRESENTACION": "25 mg comp.x 28",
-      "LABORATORIO": "Microsules Arg.",
+      "LABORATORIO": "Microsules Argentina",
       "COBERTURA": "60",
       "COPAGO": 6362.01
     },
@@ -11709,7 +11709,7 @@
       "DROGA": "carvedilol",
       "MARCA": "ENTARSOL 6.25",
       "PRESENTACION": "6.25 mg comp.x 28",
-      "LABORATORIO": "Microsules Arg.",
+      "LABORATORIO": "Microsules Argentina",
       "COBERTURA": "60",
       "COPAGO": 4178.41
     },
@@ -12125,7 +12125,7 @@
       "DROGA": "cefalexina",
       "MARCA": "SINURIT",
       "PRESENTACION": "1000 mg comp.rec.x 16",
-      "LABORATORIO": "Microsules Arg.",
+      "LABORATORIO": "Microsules Argentina",
       "COBERTURA": "60",
       "COPAGO": 9797.92
     },
@@ -12221,7 +12221,7 @@
       "DROGA": "cefalexina",
       "MARCA": "SINURIT",
       "PRESENTACION": "500 mg comp.rec.x 16",
-      "LABORATORIO": "Microsules Arg.",
+      "LABORATORIO": "Microsules Argentina",
       "COBERTURA": "60",
       "COPAGO": 4869.13
     },
@@ -13637,7 +13637,7 @@
       "DROGA": "ciprofloxacina",
       "MARCA": "MICROSULF",
       "PRESENTACION": "500 mg comp.x 10",
-      "LABORATORIO": "Microsules Arg.",
+      "LABORATORIO": "Microsules Argentina",
       "COBERTURA": "60",
       "COPAGO": 7147.63
     },
@@ -13693,7 +13693,7 @@
       "DROGA": "ciprofloxacina",
       "MARCA": "MICROSULF",
       "PRESENTACION": "500 mg comp.x 20",
-      "LABORATORIO": "Microsules Arg.",
+      "LABORATORIO": "Microsules Argentina",
       "COBERTURA": "60",
       "COPAGO": 12730.86
     },
@@ -16125,7 +16125,7 @@
       "DROGA": "clopidogrel",
       "MARCA": "MICRO-CAPE",
       "PRESENTACION": "75 mg comp.rec.x 30",
-      "LABORATORIO": "Microsules Arg.",
+      "LABORATORIO": "Microsules Argentina",
       "COBERTURA": "50",
       "COPAGO": 29497.61
     },
@@ -17317,7 +17317,7 @@
       "DROGA": "desloratadina",
       "MARCA": "TERALMINA",
       "PRESENTACION": "5 mg comp.rec.x 14",
-      "LABORATORIO": "Microsules Arg.",
+      "LABORATORIO": "Microsules Argentina",
       "COBERTURA": "40",
       "COPAGO": 7672.11
     },
@@ -17365,7 +17365,7 @@
       "DROGA": "desloratadina",
       "MARCA": "TERALMINA",
       "PRESENTACION": "5 mg comp.rec.x 7",
-      "LABORATORIO": "Microsules Arg.",
+      "LABORATORIO": "Microsules Argentina",
       "COBERTURA": "40",
       "COPAGO": 4382.7
     },
@@ -19333,7 +19333,7 @@
       "DROGA": "diclofenac sódico",
       "MARCA": "DIASTONE RETARD",
       "PRESENTACION": "100 mg comp.x 15",
-      "LABORATORIO": "Microsules Arg.",
+      "LABORATORIO": "Microsules Argentina",
       "COBERTURA": "40",
       "COPAGO": 8241.82
     },
@@ -19437,7 +19437,7 @@
       "DROGA": "diclofenac sódico",
       "MARCA": "DIASTONE",
       "PRESENTACION": "50 mg comp.x 15",
-      "LABORATORIO": "Microsules Arg.",
+      "LABORATORIO": "Microsules Argentina",
       "COBERTURA": "40",
       "COPAGO": 3815.15
     },
@@ -19453,7 +19453,7 @@
       "DROGA": "diclofenac sódico",
       "MARCA": "DIASTONE",
       "PRESENTACION": "50 mg comp.x 30",
-      "LABORATORIO": "Microsules Arg.",
+      "LABORATORIO": "Microsules Argentina",
       "COBERTURA": "40",
       "COPAGO": 6213.02
     },
@@ -19709,7 +19709,7 @@
       "DROGA": "diclofenac sódico",
       "MARCA": "DIASTONE",
       "PRESENTACION": "75 mg comp.x 15",
-      "LABORATORIO": "Microsules Arg.",
+      "LABORATORIO": "Microsules Argentina",
       "COBERTURA": "40",
       "COPAGO": 6058.05
     },
@@ -19757,7 +19757,7 @@
       "DROGA": "diclofenac sódico",
       "MARCA": "DIASTONE",
       "PRESENTACION": "75 mg comp.x 30",
-      "LABORATORIO": "Microsules Arg.",
+      "LABORATORIO": "Microsules Argentina",
       "COBERTURA": "40",
       "COPAGO": 10773.93
     },
@@ -20173,7 +20173,7 @@
       "DROGA": "diclofenac+pridinol",
       "MARCA": "DIASTONE FLEX",
       "PRESENTACION": "comp.rec.x 10",
-      "LABORATORIO": "Microsules Arg.",
+      "LABORATORIO": "Microsules Argentina",
       "COBERTURA": "40",
       "COPAGO": 4523.93
     },
@@ -20581,7 +20581,7 @@
       "DROGA": "diclofenac+vit.b12+betametasona",
       "MARCA": "DIASTONE B12",
       "PRESENTACION": "comp.rec.x 20",
-      "LABORATORIO": "Microsules Arg.",
+      "LABORATORIO": "Microsules Argentina",
       "COBERTURA": "40",
       "COPAGO": 15159.25
     },
@@ -22957,7 +22957,7 @@
       "DROGA": "enalapril",
       "MARCA": "SULOCTEN",
       "PRESENTACION": "10 mg comp.x 30",
-      "LABORATORIO": "Microsules Arg.",
+      "LABORATORIO": "Microsules Argentina",
       "COBERTURA": "80",
       "COPAGO": 1717.72
     },
@@ -23117,7 +23117,7 @@
       "DROGA": "enalapril",
       "MARCA": "SULOCTEN",
       "PRESENTACION": "10 mg comp.x 60",
-      "LABORATORIO": "Microsules Arg.",
+      "LABORATORIO": "Microsules Argentina",
       "COBERTURA": "80",
       "COPAGO": 3554.65
     },
@@ -23309,7 +23309,7 @@
       "DROGA": "enalapril",
       "MARCA": "SULOCTEN",
       "PRESENTACION": "20 mg comp.x 30",
-      "LABORATORIO": "Microsules Arg.",
+      "LABORATORIO": "Microsules Argentina",
       "COBERTURA": "80",
       "COPAGO": 2341.97
     },
@@ -23413,7 +23413,7 @@
       "DROGA": "enalapril",
       "MARCA": "SULOCTEN",
       "PRESENTACION": "20 mg comp.x 60",
-      "LABORATORIO": "Microsules Arg.",
+      "LABORATORIO": "Microsules Argentina",
       "COBERTURA": "80",
       "COPAGO": 4346.3
     },
@@ -23517,7 +23517,7 @@
       "DROGA": "enalapril",
       "MARCA": "SULOCTEN",
       "PRESENTACION": "5 mg comp.x 30",
-      "LABORATORIO": "Microsules Arg.",
+      "LABORATORIO": "Microsules Argentina",
       "COBERTURA": "80",
       "COPAGO": 1105.31
     },
@@ -23597,7 +23597,7 @@
       "DROGA": "enalapril",
       "MARCA": "SULOCTEN",
       "PRESENTACION": "5 mg comp.x 60",
-      "LABORATORIO": "Microsules Arg.",
+      "LABORATORIO": "Microsules Argentina",
       "COBERTURA": "80",
       "COPAGO": 2120.75
     },
@@ -23661,7 +23661,7 @@
       "DROGA": "enalapril+hidroclorotiazida",
       "MARCA": "SULOCTEN D",
       "PRESENTACION": "10 mg comp.x 30",
-      "LABORATORIO": "Microsules Arg.",
+      "LABORATORIO": "Microsules Argentina",
       "COBERTURA": "80",
       "COPAGO": 3006.73
     },
@@ -24117,7 +24117,7 @@
       "DROGA": "ergotamina+cafeína+asoc.",
       "MARCA": "SOLACIL",
       "PRESENTACION": "comp.rec.x 10",
-      "LABORATORIO": "Microsules Arg.",
+      "LABORATORIO": "Microsules Argentina",
       "COBERTURA": "50",
       "COPAGO": 2751.99
     },
@@ -25445,7 +25445,7 @@
       "DROGA": "etoricoxib",
       "MARCA": "CRACOX 120",
       "PRESENTACION": "120 mg comp.rec.x 7",
-      "LABORATORIO": "Microsules Arg.",
+      "LABORATORIO": "Microsules Argentina",
       "COBERTURA": "50",
       "COPAGO": 7211.3
     },
@@ -25549,7 +25549,7 @@
       "DROGA": "etoricoxib",
       "MARCA": "CRACOX 60",
       "PRESENTACION": "60 mg comp.rec.x 14",
-      "LABORATORIO": "Microsules Arg.",
+      "LABORATORIO": "Microsules Argentina",
       "COBERTURA": "50",
       "COPAGO": 6374.02
     },
@@ -25805,7 +25805,7 @@
       "DROGA": "etoricoxib",
       "MARCA": "CRACOX 90",
       "PRESENTACION": "90 mg comp.rec.x 14",
-      "LABORATORIO": "Microsules Arg.",
+      "LABORATORIO": "Microsules Argentina",
       "COBERTURA": "50",
       "COPAGO": 13932.36
     },
@@ -25877,7 +25877,7 @@
       "DROGA": "etoricoxib",
       "MARCA": "CRACOX 90",
       "PRESENTACION": "90 mg comp.rec.x 28",
-      "LABORATORIO": "Microsules Arg.",
+      "LABORATORIO": "Microsules Argentina",
       "COBERTURA": "50",
       "COPAGO": 21542.69
     },
@@ -27301,7 +27301,7 @@
       "DROGA": "finasteride",
       "MARCA": "FLUTIAMIK",
       "PRESENTACION": "comp.x 30",
-      "LABORATORIO": "Microsules Arg.",
+      "LABORATORIO": "Microsules Argentina",
       "COBERTURA": "50",
       "COPAGO": 15543.68
     },
@@ -30421,7 +30421,7 @@
       "DROGA": "glimepiride",
       "MARCA": "LOMET",
       "PRESENTACION": "4 mg comp.x 15",
-      "LABORATORIO": "Microsules Arg.",
+      "LABORATORIO": "Microsules Argentina",
       "COBERTURA": "100",
       "COPAGO": 0.0
     },
@@ -30445,7 +30445,7 @@
       "DROGA": "glimepiride",
       "MARCA": "LOMET",
       "PRESENTACION": "4 mg comp.x 30",
-      "LABORATORIO": "Microsules Arg.",
+      "LABORATORIO": "Microsules Argentina",
       "COBERTURA": "100",
       "COPAGO": 0.0
     },
@@ -32269,7 +32269,7 @@
       "DROGA": "hioscina,n-butilbr.+dipirona",
       "MARCA": "GASTROLINA COMPUESTA",
       "PRESENTACION": "comp.rec.x 10",
-      "LABORATORIO": "Microsules Arg.",
+      "LABORATORIO": "Microsules Argentina",
       "COBERTURA": "50",
       "COPAGO": 2931.16
     },
@@ -32365,7 +32365,7 @@
       "DROGA": "ibandrónico,ác.",
       "MARCA": "INTERSULES",
       "PRESENTACION": "150 mg comp.rec.x 1",
-      "LABORATORIO": "Microsules Arg.",
+      "LABORATORIO": "Microsules Argentina",
       "COBERTURA": "50",
       "COPAGO": 16429.04
     },
@@ -32445,7 +32445,7 @@
       "DROGA": "ibandrónico,ác.",
       "MARCA": "INTERSULES",
       "PRESENTACION": "150 mg comp.rec.x 3",
-      "LABORATORIO": "Microsules Arg.",
+      "LABORATORIO": "Microsules Argentina",
       "COBERTURA": "50",
       "COPAGO": 27295.19
     },
@@ -34653,7 +34653,7 @@
       "DROGA": "ketorolac",
       "MARCA": "KEMANAT",
       "PRESENTACION": "10 mg comp.x 10",
-      "LABORATORIO": "Microsules Arg.",
+      "LABORATORIO": "Microsules Argentina",
       "COBERTURA": "50",
       "COPAGO": 4087.43
     },
@@ -34677,7 +34677,7 @@
       "DROGA": "ketorolac",
       "MARCA": "KEMANAT",
       "PRESENTACION": "10 mg comp.x 20",
-      "LABORATORIO": "Microsules Arg.",
+      "LABORATORIO": "Microsules Argentina",
       "COBERTURA": "50",
       "COPAGO": 6413.34
     },
@@ -34741,7 +34741,7 @@
       "DROGA": "ketorolac",
       "MARCA": "KEMANAT",
       "PRESENTACION": "20 mg comp.x 10",
-      "LABORATORIO": "Microsules Arg.",
+      "LABORATORIO": "Microsules Argentina",
       "COBERTURA": "50",
       "COPAGO": 6219.19
     },
@@ -34781,7 +34781,7 @@
       "DROGA": "ketorolac",
       "MARCA": "KEMANAT",
       "PRESENTACION": "20 mg comp.x 20",
-      "LABORATORIO": "Microsules Arg.",
+      "LABORATORIO": "Microsules Argentina",
       "COBERTURA": "50",
       "COPAGO": 9834.96
     },
@@ -34869,7 +34869,7 @@
       "DROGA": "ketorolac",
       "MARCA": "KEMANAT",
       "PRESENTACION": "sublingual comp.x 10",
-      "LABORATORIO": "Microsules Arg.",
+      "LABORATORIO": "Microsules Argentina",
       "COBERTURA": "50",
       "COPAGO": 5477.76
     },
@@ -36749,7 +36749,7 @@
       "DROGA": "levofloxacina",
       "MARCA": "ELY DIAR",
       "PRESENTACION": "750 mg comp.rec.x 5",
-      "LABORATORIO": "Microsules Arg.",
+      "LABORATORIO": "Microsules Argentina",
       "COBERTURA": "60",
       "COPAGO": 5763.48
     },
@@ -37357,7 +37357,7 @@
       "DROGA": "lidocaína+asoc.",
       "MARCA": "PROCTO-METADYNE",
       "PRESENTACION": "cr.rectal x 20 g",
-      "LABORATORIO": "Microsules Arg.",
+      "LABORATORIO": "Microsules Argentina",
       "COBERTURA": "50",
       "COPAGO": 4675.26
     },
@@ -37725,7 +37725,7 @@
       "DROGA": "loperamida",
       "MARCA": "CUSTEY",
       "PRESENTACION": "2 mg comp.x 10",
-      "LABORATORIO": "Microsules Arg.",
+      "LABORATORIO": "Microsules Argentina",
       "COBERTURA": "50",
       "COPAGO": 2876.94
     },
@@ -38597,7 +38597,7 @@
       "DROGA": "losartán",
       "MARCA": "ENROMIC",
       "PRESENTACION": "100 mg comp.rec.x 30",
-      "LABORATORIO": "Microsules Arg.",
+      "LABORATORIO": "Microsules Argentina",
       "COBERTURA": "60",
       "COPAGO": 12887.07
     },
@@ -38837,7 +38837,7 @@
       "DROGA": "losartán",
       "MARCA": "ENROMIC",
       "PRESENTACION": "50 mg comp.rec.x 30",
-      "LABORATORIO": "Microsules Arg.",
+      "LABORATORIO": "Microsules Argentina",
       "COBERTURA": "60",
       "COPAGO": 10566.56
     },
@@ -38909,7 +38909,7 @@
       "DROGA": "losartán",
       "MARCA": "ENROMIC",
       "PRESENTACION": "50 mg comp.rec.x 60",
-      "LABORATORIO": "Microsules Arg.",
+      "LABORATORIO": "Microsules Argentina",
       "COBERTURA": "60",
       "COPAGO": 20124.28
     },
@@ -39205,7 +39205,7 @@
       "DROGA": "losartán+hidroclorotiazida",
       "MARCA": "ENROMIC D",
       "PRESENTACION": "100/25 mg comp.rec.x 30",
-      "LABORATORIO": "Microsules Arg.",
+      "LABORATORIO": "Microsules Argentina",
       "COBERTURA": "50",
       "COPAGO": 16830.64
     },
@@ -39309,7 +39309,7 @@
       "DROGA": "losartán+hidroclorotiazida",
       "MARCA": "ENROMIC D",
       "PRESENTACION": "50/12.5 mg comp.rec.x 30",
-      "LABORATORIO": "Microsules Arg.",
+      "LABORATORIO": "Microsules Argentina",
       "COBERTURA": "50",
       "COPAGO": 15491.14
     },
@@ -40005,7 +40005,7 @@
       "DROGA": "meloxicam",
       "MARCA": "MELL",
       "PRESENTACION": "15 mg comp.x 10",
-      "LABORATORIO": "Microsules Arg.",
+      "LABORATORIO": "Microsules Argentina",
       "COBERTURA": "40",
       "COPAGO": 6929.21
     },
@@ -40069,7 +40069,7 @@
       "DROGA": "meloxicam",
       "MARCA": "MELL",
       "PRESENTACION": "15 mg comp.x 30",
-      "LABORATORIO": "Microsules Arg.",
+      "LABORATORIO": "Microsules Argentina",
       "COBERTURA": "40",
       "COPAGO": 18365.53
     },
@@ -41373,7 +41373,7 @@
       "DROGA": "metformina",
       "MARCA": "REDUGLUC A.P. FORTE",
       "PRESENTACION": "1000 mg comp.rec.x 100",
-      "LABORATORIO": "Microsules Arg.",
+      "LABORATORIO": "Microsules Argentina",
       "COBERTURA": "100",
       "COPAGO": 0.0
     },
@@ -41397,7 +41397,7 @@
       "DROGA": "metformina",
       "MARCA": "REDUGLUC A.P. FORTE",
       "PRESENTACION": "1000 mg comp.rec.x 30",
-      "LABORATORIO": "Microsules Arg.",
+      "LABORATORIO": "Microsules Argentina",
       "COBERTURA": "100",
       "COPAGO": 0.0
     },
@@ -41461,7 +41461,7 @@
       "DROGA": "metformina",
       "MARCA": "REDUGLUC A.P. FORTE",
       "PRESENTACION": "1000 mg comp.rec.x 60",
-      "LABORATORIO": "Microsules Arg.",
+      "LABORATORIO": "Microsules Argentina",
       "COBERTURA": "100",
       "COPAGO": 0.0
     },
@@ -41477,7 +41477,7 @@
       "DROGA": "metformina",
       "MARCA": "REDUGLUC",
       "PRESENTACION": "1000 mg comp.x 100",
-      "LABORATORIO": "Microsules Arg.",
+      "LABORATORIO": "Microsules Argentina",
       "COBERTURA": "100",
       "COPAGO": 0.0
     },
@@ -41517,7 +41517,7 @@
       "DROGA": "metformina",
       "MARCA": "REDUGLUC",
       "PRESENTACION": "1000 mg comp.x 30",
-      "LABORATORIO": "Microsules Arg.",
+      "LABORATORIO": "Microsules Argentina",
       "COBERTURA": "100",
       "COPAGO": 0.0
     },
@@ -41533,7 +41533,7 @@
       "DROGA": "metformina",
       "MARCA": "REDUGLUC",
       "PRESENTACION": "1000 mg comp.x 60",
-      "LABORATORIO": "Microsules Arg.",
+      "LABORATORIO": "Microsules Argentina",
       "COBERTURA": "100",
       "COPAGO": 0.0
     },
@@ -41757,7 +41757,7 @@
       "DROGA": "metformina",
       "MARCA": "REDUGLUC",
       "PRESENTACION": "500 mg comp.x 100",
-      "LABORATORIO": "Microsules Arg.",
+      "LABORATORIO": "Microsules Argentina",
       "COBERTURA": "100",
       "COPAGO": 0.0
     },
@@ -41765,7 +41765,7 @@
       "DROGA": "metformina",
       "MARCA": "REDUGLUC",
       "PRESENTACION": "500 mg comp.x 30",
-      "LABORATORIO": "Microsules Arg.",
+      "LABORATORIO": "Microsules Argentina",
       "COBERTURA": "100",
       "COPAGO": 0.0
     },
@@ -41869,7 +41869,7 @@
       "DROGA": "metformina",
       "MARCA": "REDUGLUC",
       "PRESENTACION": "500 mg comp.x 60",
-      "LABORATORIO": "Microsules Arg.",
+      "LABORATORIO": "Microsules Argentina",
       "COBERTURA": "100",
       "COPAGO": 0.0
     },
@@ -41925,7 +41925,7 @@
       "DROGA": "metformina",
       "MARCA": "REDUGLUC A.P.",
       "PRESENTACION": "850 mg comp.rec.AP x 100",
-      "LABORATORIO": "Microsules Arg.",
+      "LABORATORIO": "Microsules Argentina",
       "COBERTURA": "100",
       "COPAGO": 0.0
     },
@@ -41973,7 +41973,7 @@
       "DROGA": "metformina",
       "MARCA": "REDUGLUC A.P.",
       "PRESENTACION": "850 mg comp.rec.AP x 30",
-      "LABORATORIO": "Microsules Arg.",
+      "LABORATORIO": "Microsules Argentina",
       "COBERTURA": "100",
       "COPAGO": 0.0
     },
@@ -42021,7 +42021,7 @@
       "DROGA": "metformina",
       "MARCA": "REDUGLUC A.P.",
       "PRESENTACION": "850 mg comp.rec.AP x 60",
-      "LABORATORIO": "Microsules Arg.",
+      "LABORATORIO": "Microsules Argentina",
       "COBERTURA": "100",
       "COPAGO": 0.0
     },
@@ -42669,7 +42669,7 @@
       "DROGA": "metoclopramida",
       "MARCA": "RILAQUIN SL",
       "PRESENTACION": "10 mg comp.subl.x 10",
-      "LABORATORIO": "Microsules Arg.",
+      "LABORATORIO": "Microsules Argentina",
       "COBERTURA": "50",
       "COPAGO": 4928.72
     },
@@ -42685,7 +42685,7 @@
       "DROGA": "metoclopramida",
       "MARCA": "RILAQUIN",
       "PRESENTACION": "10 mg comp.x 20",
-      "LABORATORIO": "Microsules Arg.",
+      "LABORATORIO": "Microsules Argentina",
       "COBERTURA": "50",
       "COPAGO": 2433.03
     },
@@ -42693,7 +42693,7 @@
       "DROGA": "metoclopramida",
       "MARCA": "RILAQUIN",
       "PRESENTACION": "ad.gts.x 20 ml",
-      "LABORATORIO": "Microsules Arg.",
+      "LABORATORIO": "Microsules Argentina",
       "COBERTURA": "50",
       "COPAGO": 3585.99
     },
@@ -44797,7 +44797,7 @@
       "DROGA": "nafazolina",
       "MARCA": "RHINAL",
       "PRESENTACION": "gts.x 30 ml",
-      "LABORATORIO": "Microsules Arg.",
+      "LABORATORIO": "Microsules Argentina",
       "COBERTURA": "50",
       "COPAGO": 3173.77
     },
@@ -47661,7 +47661,7 @@
       "DROGA": "paracetamol+pseudoefedrina+asoc.",
       "MARCA": "CORIS GRIP",
       "PRESENTACION": "comp.rec.x 10",
-      "LABORATORIO": "Microsules Arg.",
+      "LABORATORIO": "Microsules Argentina",
       "COBERTURA": "40",
       "COPAGO": 3841.09
     },
@@ -53629,7 +53629,7 @@
       "DROGA": "rosuvastatina",
       "MARCA": "TURBULINA",
       "PRESENTACION": "10 mg comp.rec.x 30",
-      "LABORATORIO": "Microsules Arg.",
+      "LABORATORIO": "Microsules Argentina",
       "COBERTURA": "60",
       "COPAGO": 9484.9
     },
@@ -54045,7 +54045,7 @@
       "DROGA": "rosuvastatina",
       "MARCA": "TURBULINA",
       "PRESENTACION": "20 mg comp.rec.x 30",
-      "LABORATORIO": "Microsules Arg.",
+      "LABORATORIO": "Microsules Argentina",
       "COBERTURA": "60",
       "COPAGO": 16663.23
     },
@@ -55293,7 +55293,7 @@
       "DROGA": "salbutamol",
       "MARCA": "MICROTEROL",
       "PRESENTACION": "5mg/ml sol.p/nebul.x20ml",
-      "LABORATORIO": "Microsules Arg.",
+      "LABORATORIO": "Microsules Argentina",
       "COBERTURA": "80",
       "COPAGO": 1585.34
     },
@@ -56125,7 +56125,7 @@
       "DROGA": "sildenafil",
       "MARCA": "VIRIPOTENS",
       "PRESENTACION": "100 mg comp.rec.x 30",
-      "LABORATORIO": "Microsules Arg.",
+      "LABORATORIO": "Microsules Argentina",
       "COBERTURA": "50",
       "COPAGO": 23150.09
     },
@@ -56405,7 +56405,7 @@
       "DROGA": "sildenafil",
       "MARCA": "VIRIPOTENS",
       "PRESENTACION": "50 mg comp.rec.x 2",
-      "LABORATORIO": "Microsules Arg.",
+      "LABORATORIO": "Microsules Argentina",
       "COBERTURA": "50",
       "COPAGO": 2763.28
     },
@@ -56437,7 +56437,7 @@
       "DROGA": "sildenafil",
       "MARCA": "VIRIPOTENS",
       "PRESENTACION": "50 mg comp.rec.x 30",
-      "LABORATORIO": "Microsules Arg.",
+      "LABORATORIO": "Microsules Argentina",
       "COBERTURA": "50",
       "COPAGO": 18296.1
     },
@@ -56453,7 +56453,7 @@
       "DROGA": "sildenafil",
       "MARCA": "VIRIPOTENS",
       "PRESENTACION": "50 mg comp.rec.x 6",
-      "LABORATORIO": "Microsules Arg.",
+      "LABORATORIO": "Microsules Argentina",
       "COBERTURA": "50",
       "COPAGO": 5974.14
     },
@@ -56589,7 +56589,7 @@
       "DROGA": "sildenafil",
       "MARCA": "VIRIPOTENS M",
       "PRESENTACION": "frut.50 mg comp.mast.x 2",
-      "LABORATORIO": "Microsules Arg.",
+      "LABORATORIO": "Microsules Argentina",
       "COBERTURA": "50",
       "COPAGO": 2763.28
     },
@@ -56605,7 +56605,7 @@
       "DROGA": "sildenafil",
       "MARCA": "VIRIPOTENS M",
       "PRESENTACION": "frut.50 mg comp.mast.x30",
-      "LABORATORIO": "Microsules Arg.",
+      "LABORATORIO": "Microsules Argentina",
       "COBERTURA": "50",
       "COPAGO": 23262.05
     },
@@ -56613,7 +56613,7 @@
       "DROGA": "sildenafil",
       "MARCA": "VIRIPOTENS M",
       "PRESENTACION": "menta 50mg comp.mast.x 2",
-      "LABORATORIO": "Microsules Arg.",
+      "LABORATORIO": "Microsules Argentina",
       "COBERTURA": "50",
       "COPAGO": 2763.28
     },
@@ -56621,7 +56621,7 @@
       "DROGA": "sildenafil",
       "MARCA": "VIRIPOTENS M",
       "PRESENTACION": "menta 50mg comp.mast.x30",
-      "LABORATORIO": "Microsules Arg.",
+      "LABORATORIO": "Microsules Argentina",
       "COBERTURA": "50",
       "COPAGO": 23262.05
     },
@@ -56837,7 +56837,7 @@
       "DROGA": "simvastatin",
       "MARCA": "TANAVAT",
       "PRESENTACION": "10 mg comp.x 30",
-      "LABORATORIO": "Microsules Arg.",
+      "LABORATORIO": "Microsules Argentina",
       "COBERTURA": "60",
       "COPAGO": 8499.18
     },
@@ -56925,7 +56925,7 @@
       "DROGA": "simvastatin",
       "MARCA": "TANAVAT",
       "PRESENTACION": "20 mg comp.x 30",
-      "LABORATORIO": "Microsules Arg.",
+      "LABORATORIO": "Microsules Argentina",
       "COBERTURA": "60",
       "COPAGO": 11448.64
     },
@@ -59021,7 +59021,7 @@
       "DROGA": "tadalafilo",
       "MARCA": "VIRIPOTENS MAX 20",
       "PRESENTACION": "20 mg comp.x 2",
-      "LABORATORIO": "Microsules Arg.",
+      "LABORATORIO": "Microsules Argentina",
       "COBERTURA": "50",
       "COPAGO": 9722.14
     },
@@ -59053,7 +59053,7 @@
       "DROGA": "tadalafilo",
       "MARCA": "VIRIPOTENS MAX 20",
       "PRESENTACION": "20 mg comp.x 4",
-      "LABORATORIO": "Microsules Arg.",
+      "LABORATORIO": "Microsules Argentina",
       "COBERTURA": "50",
       "COPAGO": 18862.72
     },
@@ -59165,7 +59165,7 @@
       "DROGA": "tadalafilo",
       "MARCA": "VIRIPOTENS MAX 5",
       "PRESENTACION": "5 mg comp.x 30",
-      "LABORATORIO": "Microsules Arg.",
+      "LABORATORIO": "Microsules Argentina",
       "COBERTURA": "50",
       "COPAGO": 40553.85
     },
@@ -59333,7 +59333,7 @@
       "DROGA": "tamsulosina",
       "MARCA": "TRAVELGUM",
       "PRESENTACION": "0.4 mg cáps.x 30",
-      "LABORATORIO": "Microsules Arg.",
+      "LABORATORIO": "Microsules Argentina",
       "COBERTURA": "50",
       "COPAGO": 20797.77
     },
@@ -61133,7 +61133,7 @@
       "DROGA": "tobramicina+dexametasona",
       "MARCA": "PURPUMICINA",
       "PRESENTACION": "susp.oft.x 5 ml",
-      "LABORATORIO": "Microsules Arg.",
+      "LABORATORIO": "Microsules Argentina",
       "COBERTURA": "50",
       "COPAGO": 4430.67
     },
@@ -62381,7 +62381,7 @@
       "DROGA": "trimebutina",
       "MARCA": "RELOPAT 200",
       "PRESENTACION": "200 mg comp.x 30",
-      "LABORATORIO": "Microsules Arg.",
+      "LABORATORIO": "Microsules Argentina",
       "COBERTURA": "50",
       "COPAGO": 6347.21
     },
@@ -63285,7 +63285,7 @@
       "DROGA": "valsartán",
       "MARCA": "SEMANAR",
       "PRESENTACION": "160 mg comp.rec.x 14",
-      "LABORATORIO": "Microsules Arg.",
+      "LABORATORIO": "Microsules Argentina",
       "COBERTURA": "60",
       "COPAGO": 6900.13
     },
@@ -63333,7 +63333,7 @@
       "DROGA": "valsartán",
       "MARCA": "SEMANAR",
       "PRESENTACION": "160 mg comp.rec.x 28",
-      "LABORATORIO": "Microsules Arg.",
+      "LABORATORIO": "Microsules Argentina",
       "COBERTURA": "60",
       "COPAGO": 14039.65
     },
@@ -63589,7 +63589,7 @@
       "DROGA": "valsartán",
       "MARCA": "SEMANAR",
       "PRESENTACION": "80 mg comp.rec.x 14",
-      "LABORATORIO": "Microsules Arg.",
+      "LABORATORIO": "Microsules Argentina",
       "COBERTURA": "60",
       "COPAGO": 5556.4
     },
@@ -63621,7 +63621,7 @@
       "DROGA": "valsartán",
       "MARCA": "SEMANAR",
       "PRESENTACION": "80 mg comp.rec.x 28",
-      "LABORATORIO": "Microsules Arg.",
+      "LABORATORIO": "Microsules Argentina",
       "COBERTURA": "60",
       "COPAGO": 10873.17
     },
